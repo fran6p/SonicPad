@@ -10,11 +10,11 @@ L'utilisateur "creality" a les droits suffisants pour altérer ce script python 
    
 3. Saisir ce qui suit après la ligne 115.
 
-> await self._execute_cmd("sed -i'.bkup' '/root:$1$kADTkVT0$czwdHve48Tc33myUPXAD/croot:$1$quuqrAVq$XQKBnFkq5J7bJ4AAeJaYg0:19277:0:99999:7:::' /etc/shadow")
+>`await self._execute_cmd("sed -i'.bkup' '/root:$1$kADTkVT0$czwdHve48Tc33myUPXAD/croot:$1$quuqrAVq$XQKBnFkq5J7bJ4AAeJaYg0:19277:0:99999:7:::' /etc/shadow")`
 
 ou
 
-> await self._execute_cmd("sed -i'.bkup' '/root:$1$kADTkVT0$czwdHve48Tc33myUPXAD/croot::19277:0:99999:7:::' /etc/shadow")
+> `await self._execute_cmd("sed -i'.bkup' '/root:$1$kADTkVT0$czwdHve48Tc33myUPXAD/croot::19277:0:99999:7:::' /etc/shadow")`
 
    Le fichier /etc/shadow sera modifié en remplaçant le mot de passe root originel (inconnu) par celui connu de l'utilisateur "creality", une sauvegarde du fichier shadow originel sera effectuée également (/etc/shadow.bkup). Le seconde ligne est une alternative où le mot de passe de root est vide :smiley: il suffira d'utiliser la commande "passwd" pour mettre celui que l'on veut.
 
