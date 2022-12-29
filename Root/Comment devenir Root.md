@@ -12,11 +12,15 @@ L'utilisateur "creality" a les droits suffisants pour altérer ce script python 
 
 > await self._execute_cmd("sed -i'.bkup' '/root:$1$kADTkVT0$czwdHve48Tc33myUPXAD/croot:$1$quuqrAVq$XQKBnFkq5J7bJ4AAeJaYg0:19277:0:99999:7:::' /etc/shadow")
 
-   Le fichier /etc/shadow sera modifié en remplaçant le mot de passe root originel (inconnu) par celui connu de l'utilisateur "creality", une sauvegarde du fichier shadow originel sera effectuée également (/etc/shadow.bkup).
+ou
+
+> await self._execute_cmd("sed -i'.bkup' '/root:$1$kADTkVT0$czwdHve48Tc33myUPXAD/croot::19277:0:99999:7:::' /etc/shadow")
+
+   Le fichier /etc/shadow sera modifié en remplaçant le mot de passe root originel (inconnu) par celui connu de l'utilisateur "creality", une sauvegarde du fichier shadow originel sera effectuée également (/etc/shadow.bkup). Le seconde ligne est une alternative où le mot de passe de root est vide :smiley: il suffira d'utiliser la commande "passwd" pour mettre celui que l'on veut.
 
    Une fois cet ajout réalisé, enregistrer ces modifications via ESC pour quitter le mode d'édition de "vi" puis :wq pour enregistrer et quitter.
    
 4. Redémarrer la Sonic Pad
-5. Se connecter en SSH sur la Sonic Pad avec l'identifiant root:creality
+5. Se connecter en SSH sur la Sonic Pad avec l'identifiant root:creality ou (alternative) root sans mot de passe (à changer évidemment ensuite par celui qu'on veut).
 
 *«A grand pouvoir, grandes responsabilités»*
