@@ -6,7 +6,7 @@ L'utilisateur "creality" a les droits suffisants pour altérer ce script python 
 2. Éditer le fichier machine.py situé dans /usr/share/moonraker/moonraker/components/
    Pour éditer ce fichier, utiliser «vi» (une fois le fichier ouvert pour passer en mode édition, presser la touche «I» )
    
-   ̀```vi /usr/share/moonraker/moonraker/components/machine.py```
+   ̀`vi /usr/share/moonraker/moonraker/components/machine.py`
    
 3. Saisir ce qui suit après la ligne 115.
 
