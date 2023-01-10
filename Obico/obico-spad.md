@@ -2,7 +2,7 @@
 J'ai réussi à faire fonctionner Obico sur le Sonic Pad. Vous trouverez ci-dessous les instructions pour le faire fonctionner. Vous devrez obtenir un compte root pour effectuer ces étapes. Soyez prudent, car chaque fois que vous utilisez le root, il y a une chance que vous puissiez bloquer l'appareil, si vous ne pouvez pas le démarrer. Creality n'a pas fourni de processus pour flasher complètement l'appareil.
 
 
-**Ce guide a été écrit pour les personnes ayant une expérience préalable de Linux. Ne suivez ce guide que si vous êtes à l'aise avec l'édition de fichiers, la navigation dans les systèmes de fichiers linux, et si vous pouvez faire votre propre dépannage. Cela a fonctionné pour moi, mais je ne peux pas garantir que cela fonctionnera pour vous. Veuillez vous assurer que vous êtes sur le même firmware avant de l'exécuter. Ce guide suppose que vous avez une imprimante. Je ne l'ai pas testé sur un Pad connecté à plusieurs imprimantes. J'utilise une Ender 5 S1, donc je ne peux pas garantir que cela fonctionnera pour vous et d'autres imprimantes.
+**Ce guide a été écrit pour les personnes ayant une expérience préalable de Linux. Ne suivez ce guide que si vous êtes à l'aise avec l'édition de fichiers, la navigation dans les systèmes de fichiers linux, et si vous pouvez faire votre propre dépannage. Cela a fonctionné pour moi, mais je ne peux pas garantir que cela fonctionnera pour vous. Veuillez vous assurer que vous êtes sur le même firmware avant de l'exécuter. Ce guide suppose que vous avez une imprimante. Je ne l'ai pas testé sur un Pad connecté à plusieurs imprimantes. J'utilise une Ender 5 S1, donc je ne peux pas garantir que cela fonctionnera pour vous et d'autres imprimantes.**
 
 
 >Si vous rencontrez des difficultés, vous pouvez restaurer le dispositif en exécutant la commande suivante :
@@ -21,26 +21,28 @@ Voici les étapes de haut niveau :
 
 C'est parti !
 
-## 1. SSH et obtenir root
+## 1. SSH et passer root
 
-  ### 1.1 Se connecter sur Sonic Pad
-  ```ssh -oHostKeyAlgorithms=+ssh-rsa creality@<your-ip/hostname>```
-  >Password: creality
+  ### 1.1 Se connecter sur le Sonic Pad
+  ```ssh creality@<adresse-ip/nom-hôte>```
+  >Mot de passe: creality
   
   ### 1.2 Passer root
-  credit to [smwoodward](https://github.com/smwoodward/Sonic-Pad-Updates/blob/main/root_access/Root) pour la méthode d'accès
+  crédit à [smwoodward](https://github.com/smwoodward/Sonic-Pad-Updates/blob/main/root_access/Root) pour la méthode d'accès
 
-  Editer moonraker init pour injecter la mise à jour du mot de passe root
+  Editer le composants machine.py de Moonraker pour remplacer le de passe root que Creality n'a pas donné par le même que celui de l'utilisateur creality (connu).
   `vi /usr/share/moonraker/moonraker/components/machine.py`
 
-  Après la ligne 115, entrez ce qui suit :
+  Après la ligne 115, entrez ce qui suit (ligne 116 donc), presser la touche "I" pour passer vi en mode édition :
   ```await self._execute_cmd("sed -i '/root:$1$kADTkVT0$czwdHve48Tc33myUPXAD/croot:$1$quuqrAVq$XQKBnFkq5J7bJ4AAeJaYg0:19277:0:99999:7:::' /etc/shadow")```
 
-  ### 1.3 Redémarer le Sonic Pad
+  Enregistrer cette modification ( ESC, :wq ).
+  
+ ### 1.3 Redémarer le Sonic Pad
 
   ### 1.4 SSH en utilisateur root
-  ```ssh -oHostKeyAlgorithms=+ssh-rsa root@<your-ip/hostname>```
-  >Password: creality
+  ```ssh root@<adresse-ip/nom-hôte>```
+  >Mot de passe: creality
 
 ## 2. Télécharger et configurer Obico
 
@@ -77,7 +79,7 @@ C'est parti !
 
 
   ### 3.2 Installer les modules requis du kit d'installation obico
- **Ignorez l'échec de la construction de la roue de psutil. Nous allons le corriger.
+ **Ignorez l'échec de la construction de psutil. Nous allons le corriger.**
  
  
  ```pip3 install --require-virtualenv -r requirements.txt```
@@ -103,7 +105,7 @@ C'est parti !
 
   ### 4.1 Récupérer le code de liaison du site Web d'obico (ou de votre propre serveur)
   
-  Aller à [obico.io](https://app.obico.io/printers/wizard/setup/) pour obtenir un code permettant de connecter votre imprimante.
+  Aller à [obico.io](https://app.obico.io/printers/wizard/setup/) pour obtenir un code permettant de connecter l'imprimante.
  
   ### 4.2 Exécuter le client de liaison et entrer le code de 4.1
   Exécutez l'application de liaison                  
@@ -111,9 +113,9 @@ C'est parti !
 
 
   ### 4.3 Exécuter obico
-  Avant de lancer obico en tant que service, assurez-vous qu'il s'exécute correctement. Surveillez les erreurs éventuelles.
+  Avant de lancer obico en tant que service, s'assurer qu'il s'exécute correctement. Surveiller les éventuelles erreurs.
   
-  Ignorez les erreurs sur les limites du taux de réussite de l'API si vous utilisez le service en nuage obico.io.
+  Ignorer les erreurs sur les limites du taux de réussite de l'API si vous utilisez le service cloud obico.io.
   
   Pour terminer obico, utilisez ctrl-c
   
@@ -152,4 +154,9 @@ C'est parti !
   /etc/init.d/moonraker_obico_service start
   ```
 
+  ou
+  ```
+  update-rc.d moonraker_obico_service defaults
+  ```
+  
 voilà, vous devriez être opérationnel avec obico !
