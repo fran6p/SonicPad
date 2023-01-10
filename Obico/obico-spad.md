@@ -24,6 +24,7 @@ C'est parti !
 ## 1. SSH et passer root
 
   ### 1.1 Se connecter sur le Sonic Pad
+  
   ```ssh creality@<adresse-ip/nom-hôte>```
   >Mot de passe: creality
   
@@ -31,9 +32,11 @@ C'est parti !
   crédit à [smwoodward](https://github.com/smwoodward/Sonic-Pad-Updates/blob/main/root_access/Root) pour la méthode d'accès
 
   Editer le script Python machine.py de Moonraker pour remplacer le mot de passe root que Creality n'a pas fourni par le même que celui de l'utilisateur creality (connu).
+  
   `vi /usr/share/moonraker/moonraker/components/machine.py`
 
   Après la ligne 115, entrez ce qui suit (ligne 116 donc), presser la touche "I" pour passer vi en mode édition :
+  
   ```await self._execute_cmd("sed -i '/root:$1$kADTkVT0$czwdHve48Tc33myUPXAD/croot:$1$quuqrAVq$XQKBnFkq5J7bJ4AAeJaYg0:19277:0:99999:7:::' /etc/shadow")```
 
   Enregistrer cette modification ( ESC, :wq ).
@@ -41,6 +44,7 @@ C'est parti !
  ### 1.3 Redémarer le Sonic Pad
 
   ### 1.4 SSH en utilisateur root
+  
   ```ssh root@<adresse-ip/nom-hôte>```
   >Mot de passe: creality
 
@@ -56,7 +60,7 @@ C'est parti !
   ```
   cp moonraker-obico.cfg.sample moonraker-obico.cfg
   ```
-  >Editer la configuration que vous avez copiée et modifier le chemin du journal en : /mnt/UDISK/printer_logs/moonraker-obico.log
+  >Editer la configuration que vous avez copiée et modifier le chemin du journal en : `/mnt/UDISK/printer_logs/moonraker-obico.log`
   
   >Si vous utilisez une version locale d'obico, modifiez l'url du serveur.
 
@@ -95,6 +99,7 @@ C'est parti !
 
 
   ### 3.3 Il s'avère que python3-psutil est déjà installé depuis opkg. Copiez le module psutil dans l'environnement local.
+  
   ```cp -R /usr/lib/python3.7/site-packages/psutil* /usr/share/moonraker-obico/env/lib/python3.7/site-packages/```
  
  
@@ -108,7 +113,8 @@ C'est parti !
   Aller à [obico.io](https://app.obico.io/printers/wizard/setup/) pour obtenir un code permettant de connecter l'imprimante.
  
   ### 4.2 Exécuter le client de liaison et entrer le code de 4.1
-  Exécutez l'application de liaison                  
+  Exécutez l'application de liaison 
+  
   ```python3 -m moonraker_obico.link -c /usr/share/moonraker-obico/moonraker-obico.cfg```
 
 
