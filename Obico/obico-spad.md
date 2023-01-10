@@ -6,7 +6,7 @@ J'ai réussi à faire fonctionner Obico sur le Sonic Pad. Vous trouverez ci-dess
 
 
 >Si vous rencontrez des difficultés, vous pouvez restaurer le dispositif en exécutant la commande suivante :
->`/usr/share/script/recovery.sh all`
+>>`/usr/share/script/recovery.sh all`
 
 Ce guide a été configuré pour le firmware du Sonic Pad "V1.0.6.35.154 02 Dec. 2022".
 
