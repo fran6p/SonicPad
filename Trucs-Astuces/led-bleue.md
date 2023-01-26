@@ -24,8 +24,8 @@ stop_service(){
 }
 ```
 Les paramètres pilotables de la LED bleue sont modifiables dans `/sys/class/leds/sys-led/`
-Par exemple: 
-`echo 250 > /sys/class/leds/sys-led/delay_on`
+> Par exemple: 
+> `echo 250 > /sys/class/leds/sys-led/delay_on`
 
 ```
 -rw-r--r--    1 root     root          4096 Jan 26 14:52 brightness
