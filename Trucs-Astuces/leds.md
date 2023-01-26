@@ -38,4 +38,7 @@ lrwxrwxrwx    1 root     root             0 Jan 26 14:52 subsystem -> ../../../.
 
 ```
 max_brightness et brightness : 255
+
 delay_on et delay_off : 500
+
+
