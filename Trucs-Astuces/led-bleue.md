@@ -1,9 +1,9 @@
-LED bleue:
+##LED bleue##
 
 Cette LED clignote à une période de 500ms. Elle indique que tous les services ont bien été
 démarrés.
 
-Le service qui est lancé se situe dans `/etc/init.d/`  et se nomme `sys_led`
+Le service lancé se nomme `sys_led`, il se situe dans `/etc/init.d/`.
 
 Son contenu :
 ```
@@ -22,9 +22,8 @@ start_service() {
 stop_service(){
     [ -e /sys/class/leds/sys-led/trigger ] && echo none > /sys/class/leds/sys-led/trigger
 }
-
 ```
-Les parmètres pilotables de la LED bleue sont modifiables dans `/sys/class/leds/sys-led/`
+Les paramètres pilotables de la LED bleue sont modifiables dans `/sys/class/leds/sys-led/`
 ```
 -rw-r--r--    1 root     root          4096 Jan 26 14:52 brightness
 -rw-r--r--    1 root     root          4096 Jan 26 14:52 delay_off
