@@ -133,7 +133,7 @@ C'est parti !
   ```/usr/share/moonraker-obico/env/bin/python3 -m moonraker_obico.app -c /usr/share/moonraker-obico/moonraker-obico.cfg```
 
 
-## 5. Créer un service Créer une tâche cron
+## 5. Créer un service
 
   Maintenant que tout devrait fonctionner, nous allons configurer Obico pour qu'il fonctionne comme un service système au démarrage.
 
