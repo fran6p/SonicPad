@@ -135,7 +135,7 @@ C'est parti !
 
 ## 5. Créer un service
 
-  Maintenant que tout devrait fonctionner, nous allons configurer Obico pour qu'il fonctionne comme un service système au démarrage.
+  Maintenant que tout est fonctionnel, nous allons configurer Obico pour qu'il fonctionne comme un service système au démarrage (daemon).
 
 ### 5.1 Création du service procd
   Editez et mettez ce qui suit `/etc/init.d/moonraker_obico_service`
@@ -182,4 +182,4 @@ Redémarrer le Pad et vérifier que Obico démarrae correctement. Utiliser `ps`p
 
 > `ps | grep obico`
 
-voilà, vous devriez être opérationnel avec obico !
+voilà, vous devriez être opérationnel avec Obico (anciennement Spaghetti Detective) !
