@@ -171,6 +171,8 @@ C'est parti !
 
 ## 5. Créer une tâche cron
 
+La méthode utilisant procd pour démarrer en ntant que service peut fonctionner mais il faut qu'Obico attende que Moonraker soit complètement opérationnel avant de démarrer sinon il échoue et il faut alors le démarrer manuellement. On pourrait ajouter un délai (sleep) de 30 secondes pour s'assurer que cela se produise, mais cela retarderait le démarrage du service, une exécution en tant que tâche cron semble une meilleure solution.
+
 Exécuter: `crontab -e -u root`
 
 Cela lancera l'éditeur crontab en utilisant vi. Utiliser les commandes vi pour insérer (I), puis ESC et ensuite :wq.
