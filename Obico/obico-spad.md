@@ -11,8 +11,8 @@ J'ai réussi à faire fonctionner Obico sur le Sonic Pad. Vous trouverez ci-dess
 Ce guide a été configuré pour le firmware du Sonic Pad "V1.0.6.35.154 02 Dec. 2022".
 
 MAJ 29/01/2023:
-- Obico fonctionne encore avec la mise à jour de janvier proposée par Creality (juste avant le nouvle an chinois :smirk:)
-- La section concerant Procd a été modifiée pour fonctionner avec cron. Pas besoin de délai pour démarrer Obico après Moonraker 
+- Obico fonctionne encore avec la mise à jour de janvier proposée par Creality (juste avant le noueve an chinois :smirk:)
+- La section concernant Procd (5) a été modifiée pour fonctionner avec cron. Pas besoin de délai pour démarrer Obico après Moonraker 
 
 A un moment donné, je chercherai à automatiser ceci dans un script. Tout ceci est codé en dur pour le moment.
 Voici les étapes de haut niveau :
