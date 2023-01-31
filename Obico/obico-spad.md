@@ -133,12 +133,12 @@ C'est parti !
   ```/usr/share/moonraker-obico/env/bin/python3 -m moonraker_obico.app -c /usr/share/moonraker-obico/moonraker-obico.cfg```
 
 
-## 5. ~~Créer un service~~ Créer une tâche cron
+## 5. Créer un service Créer une tâche cron
 
-  ~~Maintenant que tout devrait fonctionner, nous allons configurer Obico pour qu'il fonctionne comme un service système au démarrage.
+  Maintenant que tout devrait fonctionner, nous allons configurer Obico pour qu'il fonctionne comme un service système au démarrage.
 
-  ~~### 5.1 Création du service procd
-  Editez et mettez ce qui suit `/etc/init.d/moonraker_obico_service`~~
+### 5.1 Création du service procd
+  Editez et mettez ce qui suit `/etc/init.d/moonraker_obico_service`
 
 ```
   #!/bin/sh /etc/rc.common
@@ -158,10 +158,10 @@ C'est parti !
   }
   ```
   
-  ### ~~5.2 Activer et exécuter le service~~
+  ### 5.2 Activer et exécuter le service
  ```
-~~  /etc/init.d/moonraker_obico_service enable~~
-~~  /etc/init.d/moonraker_obico_service start~~
+  /etc/init.d/moonraker_obico_service enable
+  /etc/init.d/moonraker_obico_service start
   ```
 
   ou
@@ -169,14 +169,17 @@ C'est parti !
   update-rc.d moonraker_obico_service defaults
   ```
 
+## 5. Créer une tâche cron
 
 Exécuter: `crontab -e -u root`
 
 Cela lancera l'éditeur crontab en utilisant vi. Utiliser les commandes vi pour insérer (I), puis ESC et ensuite :wq.
  Vérifier que la tâche cron a bien été créée  `crontab -l`.
+ 
 > `@reboot sleep 30s && /usr/share/moonraker-obico/obico-start.sh`
 
 Redémarrer le Pad et vérifier que Obico démarrae correctement. Utiliser `ps`pour vérifier que le processus `obico` a bien été lancé:
-> `ps | grep obico´
+
+> `ps | grep obico`
 
 voilà, vous devriez être opérationnel avec obico !
