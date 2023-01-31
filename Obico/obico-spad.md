@@ -73,7 +73,8 @@ C'est parti !
 ## 3. Installer les dépendances
 
   ### 3.1 Configuration de l'environnement virtuel de python pour éviter les collisions de versions
-  ```pip3 install virtualenv
+  ```
+     pip3 install virtualenv
      cd /usr/share/moonraker-obico
      virtualenv env
      source env/bin/activate
