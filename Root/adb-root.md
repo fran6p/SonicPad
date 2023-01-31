@@ -25,5 +25,5 @@ adb shell
 Cette méthode modifie le mot de passe root de manière permanente, comme il est «vide», il est tout de même conseillé
  d'en mettre un à votre convenance (passwd).
 
-Une sauvegarde ayant été réalisée, on peut toujours rmettre en l'état au cas où (mise à jour, etc.). Toutefois, j'ai déjà
+Une sauvegarde ayant été réalisée, on peut toujours remettre en l'état au cas où (mise à jour, etc.). Toutefois, j'ai déjà
  eu plusieurs mises à jour avec cette modification présente sans que le mot de passe root ne soit remodifié :smirk:
