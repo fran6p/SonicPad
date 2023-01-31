@@ -12,7 +12,7 @@ adb pull /etc/shadow
 # Faire une sauvegarde du fichier originel
 cp shadow shadow_bkup
 vi shadow
-# Remplacer le mot de passe root (la liste de caractères après le root: jusuq'au : à la fin de  cette liste)
+# Remplacer le mot de passe root (la liste de caractères après le root: jusqu'au : à la fin de  cette liste)
 ex: root:$1ß…Ygo:19277:0:99999:7::: par
 root::19277:0:99999:7:::
 # Enregistrer cette modification ( ESC puis :wq ) puis pousser celle-ci sur le Pad
