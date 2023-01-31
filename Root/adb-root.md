@@ -9,7 +9,7 @@ Lancer la commande suivante pour voir si le SP s'affiche (est reconnu) :
 Ensuite: 
 ```
 adb pull /etc/shadow
-# faire une suavegarde du fichier originel
+# Faire une sauvegarde du fichier originel
 cp shadow shadow_bkup
 vi shadow
 # Remplacer le mot de passe root (la liste de caractères après le root: jusuq'au : à la fin de  cette liste)
