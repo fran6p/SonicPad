@@ -10,6 +10,10 @@ J'ai réussi à faire fonctionner Obico sur le Sonic Pad. Vous trouverez ci-dess
 
 Ce guide a été configuré pour le firmware du Sonic Pad "V1.0.6.35.154 02 Dec. 2022".
 
+MAJ 29/01/2023:
+- Obico fonctionne encore avec la mise à jour de janvier proposée par Creality (juste avant le nouvle an chinois :smirk:)
+- La section concerant Procd a été modifiée pour fonctionner avec cron. Pas besoin de délai pour démarrer Obico après Moonraker 
+
 A un moment donné, je chercherai à automatiser ceci dans un script. Tout ceci est codé en dur pour le moment.
 Voici les étapes de haut niveau :
 
@@ -17,7 +21,7 @@ Voici les étapes de haut niveau :
 2. Télécharger et configurer Obico
 3. Installer les dépendances
 4. Lier l'imprimante
-5. Créer un service
+5. ~~Créer un service~~ Exécuter au démarrage
 
 C'est parti !
 
@@ -83,12 +87,12 @@ C'est parti !
 
 
   ### 3.2 Installer les modules requis du kit d'installation obico
- **Ignorez l'échec de la construction de psutil. Nous allons le corriger.**
+ **Ignorez l'échec de la construction de psutil. Cela sera corrigé plus tard.**
  
  
  ```pip3 install --require-virtualenv -r requirements.txt```
 
-  Pour une raison quelconque, j'ai encore des erreurs d'inclusion de module malgré ce qui précède, alors exécutez aussi ce qui suit :
+  Pour une raison quelconque, il y a encore des erreurs d'inclusion de module malgré ce qui précède, exécutez alors ce qui suit :
   ```
   pip3 install --require-virtualenv requests
   pip3 install --require-virtualenv backoff
@@ -98,12 +102,12 @@ C'est parti !
   ```
 
 
-  ### 3.3 Il s'avère que python3-psutil est déjà installé depuis opkg. Copiez le module psutil dans l'environnement local.
+  ### 3.3 python3-psutil est déjà installé depuis opkg. Copiez le module psutil dans l'environnement local (virtualenv).
   
   ```cp -R /usr/lib/python3.7/site-packages/psutil* /usr/share/moonraker-obico/env/lib/python3.7/site-packages/```
  
  
-  À ce stade, obico devrait être prêt à fonctionner. Connectons maintenant une imprimante.
+  À ce stade, obico devrait être prêt à fonctionner. Connecter maintenant une imprimante.
 
 
 ## 4. Lier l'imprimante
@@ -121,16 +125,16 @@ C'est parti !
   ### 4.3 Exécuter obico
   Avant de lancer obico en tant que service, s'assurer qu'il s'exécute correctement. Surveiller les éventuelles erreurs.
   
-  Ignorer les erreurs sur les limites du taux de réussite de l'API si vous utilisez le service cloud obico.io.
+  Ignorer les erreurs de limites du taux d'accès de l'API quand vous utilisez le service cloud obico.io.
   
-  Pour terminer obico, utilisez ctrl-c
+  Pour terminer obico, utilisez Ctrl-c
   
   ```/usr/share/moonraker-obico/env/bin/python3 -m moonraker_obico.app -c /usr/share/moonraker-obico/moonraker-obico.cfg```
 
 
-## 5. Créer un service
+## 5. ̃~~Créer un service~~ Créer une tâche cron
 
-  Maintenant que tout devrait fonctionner, nous allons configurer Obico pour qu'il fonctionne comme un service système au démarrage.
+  ~~Maintenant que tout devrait fonctionner, nous allons configurer Obico pour qu'il fonctionne comme un service système au démarrage.
 
   ### 5.1 Création du service procd
   Editez et mettez ce qui suit `/etc/init.d/moonraker_obico_service`
@@ -164,5 +168,15 @@ C'est parti !
   ```
   update-rc.d moonraker_obico_service defaults
   ```
-  
+~~
+
+Exécuter: `crontab -e -u root`
+
+Cela lancera l'éditeur crontab en utilisant vi. Utiliser les commandes vi pour insérer (I), puis ESC et ensuite :wq.
+ Vérifier que la tâche cron a bien été créée  `crontab -l`.
+> `@reboot sleep 30s && /usr/share/moonraker-obico/obico-start.sh`
+
+Redémarrer le Pad et vérifier que Obico démarrae correctement. Utiliser `ps`pour vérifier que le processus `obico` a bien été lancé:
+> `ps | grep obico´
+
 voilà, vous devriez être opérationnel avec obico !
