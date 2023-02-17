@@ -222,8 +222,8 @@ L'éditeur crontab utilisant vi sera lancé. Utiliser les commandes vi pour ins�
  
 > `@reboot sleep 30s && /usr/share/moonraker-obico/obico-start.sh`
 
-Redémarrer le Pad et vérifier que Obico démarrae correctement. Utiliser `ps`pour vérifier que le processus `obico` a bien été lancé:
+Redémarrer le Pad et vérifier que Obico démarre correctement. Utiliser `ps`pour vérifier que le processus `obico` a bien été lancé:
 
 > `ps | grep obico`
 
-voilà, vous devriez être opérationnel avec Obico (anciennement Spaghetti Detective) !
+Voilà, vous devriez être opérationnel avec Obico (anciennement Spaghetti Detective) !
