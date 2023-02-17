@@ -204,6 +204,7 @@ avec le contenu suivant:
  ```
 #!/bin/bash
 set -e PYTHONPATH=/usr/share/moonraker-obico
+cd /usr/share/moonraker-obico
 /usr/share/moonraker-obico/env/bin/python3 -m moonraker_obico.app -c /usr/share/moonraker-obico/moonraker-obico.cfg
  ```
 
