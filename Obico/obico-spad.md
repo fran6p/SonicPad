@@ -1,3 +1,5 @@
+Ce guide est une traduction adaptée de [cette publication](https://github.com/wavezcs/SonicPadObico)
+
 # Obico et Klipper (Creality Sonic Pad)
 
 Obico peut fonctionner sur le Sonic Pad mais on ne peut utiliser le script d'installation (install.sh) fourni car le système d'exploitation (dérivé d'OpenWRT) de Creality n'utilise ni systemd pour le lancement de services ni sudo pour exécuter des commandes avec les droits root. De plus les versions de Klipper, Moonraker sont et âgées et modifiées pour prendre en compte les caractéristiques matérielles de la tablette Creality.
