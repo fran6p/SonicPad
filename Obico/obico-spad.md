@@ -43,9 +43,10 @@ C'est parti !
   ### 1.1 Se connecter sur le Sonic Pad
   
   ```ssh creality@<adresse-ip/nom-hôte>```
-  >Mot de passe: creality
+  >Mot de passe: creality ou vide ou celui choisi via passwd
   
   ### 1.2 Passer root
+  
   crédit à [smwoodward](https://github.com/smwoodward/Sonic-Pad-Updates/blob/main/root_access/Root) pour la méthode d'accès
 
   Editer le script Python machine.py de Moonraker pour remplacer le mot de passe root que Creality n'a pas fourni par le même que celui de l'utilisateur creality (connu).
