@@ -4,7 +4,7 @@ Obico peut fonctionner sur le Sonic Pad mais on ne peut utiliser le script d'ins
 
 Afin d'installer Obico (ex Spaghetti Detective), il faut passer par le terminal et exécuter une suite de commandes. Vous trouverez ci-dessous les instructions pour mener à bien cette installation. 
 
-~~Vous devrez obtenir un compte root pour effectuer ces étapes. Soyez prudent, car chaque fois que vous utilisez le root, il y a une chance que vous puissiez bloquer l'appareil, si vous ne pouvez pas le démarrer. Creality n'a pas fourni de processus pour flasher complètement l'appareil.~ 
+~~Vous devrez obtenir un compte root pour effectuer ces étapes. Soyez prudent, car chaque fois que vous utilisez le root, il y a une chance que vous puissiez bloquer l'appareil, si vous ne pouvez pas le démarrer. Creality n'a pas fourni de processus pour flasher complètement l'appareil.~~
 
 Depuis [la mise à jour de février 2023 (v 1.0.6.43.51)](https://www.creality.com/blog/creality-sonic-pad-first-updated-on-february-root-access), Creality permet d'activer le root sur sa tablette en fournissant son mot de passe :smiley:. On peut donc suater l'étape 1 et passer directement à la 2 et sa suite.
 
