@@ -8,7 +8,7 @@ Afin d'installer Obico (ex Spaghetti Detective), il faut passer par le terminal 
 
 Depuis [la mise à jour de février 2023 (v 1.0.6.43.51)](https://www.creality.com/blog/creality-sonic-pad-first-updated-on-february-root-access), Creality permet d'activer le root sur sa tablette en fournissant son mot de passe :smiley:. On peut donc suater l'étape 1 et passer directement à la 2 et sa suite.
 
-**Ce guide s'adresse aux personnes ayant une expérience préalable de Linux. Ne suivez ce guide que si vous êtes à l'aise avec l'édition de fichiers, la navigation dans les systèmes de fichiers Linux, et si vous pouvez faire votre propre dépannage. Bien que cela ait fonctionné pour moi, je ne peux pas garantir que cela fonctionnera pour vous. Veuillez vous assurer que vous êtes sur le même firmware avant de l'exécuter. Ce guide suppose que vous avez une imprimante 3D. Aucun test n'a été efectué sur un Pad relié à plusieurs imprimantes. Mon imprimante principale est une Ender 5 S1, donc je ne peux pas garantir que cela fonctionnera pour d'autres imprimantes.**
+**Ce guide s'adresse aux personnes ayant une expérience préalable de Linux. Ne suivez ce guide que si vous êtes à l'aise avec l'édition de fichiers, la navigation dans les systèmes de fichiers Linux, et si vous pouvez faire votre propre dépannage. Bien que cela ait fonctionné pour moi, je ne peux pas garantir que cela fonctionnera pour vous. Veuillez vous assurer que vous êtes sur le même firmware avant de l'exécuter. Ce guide suppose que vous avez une imprimante 3D. Aucun test n'a été efectué sur un Pad relié à plusieurs imprimantes. Mon imprimante principale est une Ender 3 S1, donc je ne peux pas garantir que cela fonctionnera pour d'autres imprimantes.**
 
 
 >Si vous rencontrez des difficultés, vous pouvez restaurer le dispositif en exécutant la commande suivante :
@@ -17,9 +17,11 @@ Depuis [la mise à jour de février 2023 (v 1.0.6.43.51)](https://www.creality.c
 
 Ce guide a été configuré pour le firmware du Sonic Pad "V1.0.6.35.154 02 Dec. 2022".
 
+MAJ 10/02/2023:
+- Obico continue de fonctionner avec la mise à jour de février proposée par Creality (le vendredi 10/02/2023), la v 1.0.6.43.51 (la veille d'un week-end :smirk:)
 MAJ 29/01/2023:
-- Obico fonctionne encore avec la mise à jour de janvier proposée par Creality (juste avant le nouvel an chinois :smirk:)
-- La section concernant Procd (5) a été modifiée pour fonctionner avec cron (6). Pas besoin de délai pour démarrer Obico après Moonraker 
+- Obico fonctionne encore avec la mise à jour de janvier proposée par Creality (juste avant le nouvel an chinois :smirk:), la v 1.0.6.43.38
+- La section concernant Procd (5) a été modifiée pour fonctionner avec cron (6). Plus besoin de délai pour démarrer Obico après Moonraker 
 
 On pourrait chercher à automatiser ceci dans un script. Pour le moment, il suffit de suivre les étapes les unes après les autres.
 Voici les étapes de haut niveau :
@@ -52,6 +54,10 @@ C'est parti !
   ```await self._execute_cmd("sed -i '/root:$1$kADTkVT0$czwdHve48Tc33myUPXAD/croot:$1$quuqrAVq$XQKBnFkq5J7bJ4AAeJaYg0:19277:0:99999:7:::' /etc/shadow")```
 
   Enregistrer cette modification ( ESC, :wq ).
+  
+  Creality dans sa version de janvier a modifié le mot de passe root, la commande ci-dessus ne fonctionne plus car le hash du mot de passe est différent, utiliser alors la commande suivante qui autorisera un accès root sans mot de passe, libre à vous ensuite de le changer via `passwd` :
+  
+  ```await self._execute_cmd("sed -i'.bkup' '/^root/croot::19277:0:99999:7:::' /etc/shadow")```
   
  ### 1.3 Redémarer le Sonic Pad
 
