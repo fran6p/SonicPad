@@ -43,7 +43,7 @@ C'est parti !
   ### 1.1 Se connecter sur le Sonic Pad
   
   ```ssh creality@<adresse-ip/nom-hôte>```
-  >Mot de passe: creality ou vide ou celui choisi via passwd
+  >Mot de passe: creality
   
   ### 1.2 Passer root
   
@@ -68,7 +68,7 @@ C'est parti !
   ### 1.4 SSH en utilisateur root
   
   ```ssh root@<adresse-ip/nom-hôte>```
-  >Mot de passe: creality
+  >Mot de passe: creality ou vide ou celui choisi via passwd
 
 ## 2. Télécharger et configurer Obico
 
