@@ -228,5 +228,5 @@ Redémarrer le Pad et vérifier que Obico démarre correctement. Utiliser `ps`po
 
 Voilà, vous devriez être opérationnel avec Obico (anciennement Spaghetti Detective) !
 
-![Obico](https://github.com/fran6p/SonicPad/Images/obico-e3s1-spad.jpg "Mon imprimante Ender3 S1 accessible sur le site Obico")
+![Obico](../Images/obico-e3s1-spad.jpg "Mon imprimante Ender3 S1 accessible sur le site Obico")
 
