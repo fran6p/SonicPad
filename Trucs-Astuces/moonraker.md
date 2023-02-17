@@ -46,9 +46,9 @@ Après modifications:
 ```
 
 --------------------------------------
-Vous éteignez votre imprimante mais laissez le sonic pad allumé ?
+## Redémaarer Klipper à l'allumage de l'imprimante
 
-Êtes-vous fatigué de devoir appuyer sur 'Redémarrer Klipper' à chaque fois que vous rallumez votre imprimante?
+Vous éteignez votre imprimante mais laissez le sonic pad allumé ? Fatigué de devoir appuyer sur 'Redémarrer Klipper' à chaque fois que vous rallumez votre imprimante?
 
 Vous aurez besoin d'un accès root, pour pouvoir réaliser cette manipulation.
 
@@ -66,11 +66,11 @@ puis :
 
 ```
 chmod +x /etc/udev/rules.d/98-klipper.rules
-udevadm control --reload (or restart sonic pad)
+udevadm control --reload (ou redémarrer le Sonic Pad)
 ```
 
 --------------------------------------
-Comment « oublier » un réseau sans fil avec votre Sonic Pad :
+## Comment « oublier » un réseau sans fil avec votre Sonic Pad
 
 Nécessite un accès root
 
