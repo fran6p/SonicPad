@@ -45,6 +45,19 @@ Après modifications:
             f'/etc/init.d/{service_name} {action}')
 ```
 
+Modifier ce qui suit pour permettre la vérification des services autorisés:
+
+```
+async def _find_active_services(self):
+        services = os.listdir("/etc/init.d/")
+        for svc in services:
+            for allowed in ALLOWED_SERVICES:
+                if svc.startswith(allowed):
+                    self.available_services.append(svc)
+        self.system_info['available_services'] = self.available_services
+
+```
+
 --------------------------------------
 ## Redémaarer Klipper à l'allumage de l'imprimante
 
