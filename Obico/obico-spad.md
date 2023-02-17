@@ -19,6 +19,7 @@ Ce guide a été configuré pour le firmware du Sonic Pad "V1.0.6.35.154 02 Dec.
 
 MAJ 10/02/2023:
 - Obico continue de fonctionner avec la mise à jour de février proposée par Creality (le vendredi 10/02/2023), la v 1.0.6.43.51 (la veille d'un week-end :smirk:)
+
 MAJ 29/01/2023:
 - Obico fonctionne encore avec la mise à jour de janvier proposée par Creality (juste avant le nouvel an chinois :smirk:), la v 1.0.6.43.38
 - La section concernant Procd (5) a été modifiée pour fonctionner avec cron (6). Plus besoin de délai pour démarrer Obico après Moonraker 
