@@ -62,6 +62,7 @@ C'est parti !
 
   ### 2.2 Créer moonraker-obico.cfg
   ```
+  cd moonraker-obico
   cp moonraker-obico.cfg.sample moonraker-obico.cfg
   ```
   >Editer la configuration que vous avez copiée et modifier le chemin du journal en : `/mnt/UDISK/printer_logs/moonraker-obico.log`
