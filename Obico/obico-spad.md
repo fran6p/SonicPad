@@ -170,13 +170,35 @@ C'est parti !
   update-rc.d moonraker_obico_service defaults
   ```
 
-## 5. Créer une tâche cron
+## 6. Créer une tâche cron
 
-La méthode utilisant procd pour démarrer en ntant que service peut fonctionner mais il faut qu'Obico attende que Moonraker soit complètement opérationnel avant de démarrer sinon il échoue et il faut alors le démarrer manuellement. On pourrait ajouter un délai (sleep) de 30 secondes pour s'assurer que cela se produise, mais cela retarderait le démarrage du service, une exécution en tant que tâche cron semble une meilleure solution.
+La méthode utilisant procd pour démarrer en tant que service peut fonctionner mais il faut qu'Obico attende que Moonraker soit complètement opérationnel avant de démarrer sinon il échoue et il faut alors le démarrer manuellement. On pourrait ajouter un délai (sleep) de 30 secondes pour s'assurer que cela se produise, mais cela retarderait le démarrage du service, une exécution en tant que tâche cron semble une meilleure solution.
+
+## 6.1 Créer le script de démarrage
+
+Créer le fichier :
+ ```
+vi /usr/share/moonraker-obico/obico-start.sh
+ ```
+
+avec le contenu suivant:
+ ```
+#!/bin/bash
+set -e PYTHONPATH=/usr/share/moonraker-obico
+/usr/share/moonraker-obico/env/bin/python3 -m moonraker_obico.app -c /usr/share/moonraker-obico/moonraker-obico.cfg
+ ```
+
+Rendre ce script exécutable :
+ ```
+ chmod +x obico-start.sh
+ ```
+
+## 6.2 Créer la tâche CRON
 
 Exécuter: `crontab -e -u root`
 
-Cela lancera l'éditeur crontab en utilisant vi. Utiliser les commandes vi pour insérer (I), puis ESC et ensuite :wq.
+L'éditeur crontab utilisant vi sera lancé. Utiliser les commandes vi pour insérer (I), puis ESC pour sortir du mode édition et ensuite :wq pour enregistrer puis quitter l'éditeur.
+
  Vérifier que la tâche cron a bien été créée  `crontab -l`.
  
 > `@reboot sleep 30s && /usr/share/moonraker-obico/obico-start.sh`
