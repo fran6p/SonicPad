@@ -1,27 +1,35 @@
 # Obico et Klipper (Creality Sonic Pad)
-J'ai réussi à faire fonctionner Obico sur le Sonic Pad. Vous trouverez ci-dessous les instructions pour le faire fonctionner. Vous devrez obtenir un compte root pour effectuer ces étapes. Soyez prudent, car chaque fois que vous utilisez le root, il y a une chance que vous puissiez bloquer l'appareil, si vous ne pouvez pas le démarrer. Creality n'a pas fourni de processus pour flasher complètement l'appareil.
 
+Obico peut fonctionner sur le Sonic Pad mais on ne peut utiliser le script d'installation (install.sh) fourni car le système d'exploitation (dérivé d'OpenWRT) de Creality n'utilise ni systemd pour le lancement de services ni sudo pour exécuter des commandes avec les droits root. De plus les versions de Klipper, Moonraker sont et âgées et modifiées pour prendre en compte les caractéristiques matérielles de la tablette Creality.
 
-**Ce guide a été écrit pour les personnes ayant une expérience préalable de Linux. Ne suivez ce guide que si vous êtes à l'aise avec l'édition de fichiers, la navigation dans les systèmes de fichiers linux, et si vous pouvez faire votre propre dépannage. Cela a fonctionné pour moi, mais je ne peux pas garantir que cela fonctionnera pour vous. Veuillez vous assurer que vous êtes sur le même firmware avant de l'exécuter. Ce guide suppose que vous avez une imprimante. Je ne l'ai pas testé sur un Pad connecté à plusieurs imprimantes. J'utilise une Ender 5 S1, donc je ne peux pas garantir que cela fonctionnera pour vous et d'autres imprimantes.**
+Afin d'installer Obico (ex Spaghetti Detective), il faut passer par le terminal et exécuter une suite de commandes. Vous trouverez ci-dessous les instructions pour mener à bien cette installation. 
+
+~~Vous devrez obtenir un compte root pour effectuer ces étapes. Soyez prudent, car chaque fois que vous utilisez le root, il y a une chance que vous puissiez bloquer l'appareil, si vous ne pouvez pas le démarrer. Creality n'a pas fourni de processus pour flasher complètement l'appareil.~ 
+
+Depuis [la mise à jour de février 2023 (v 1.0.6.43.51)](https://www.creality.com/blog/creality-sonic-pad-first-updated-on-february-root-access), Creality permet d'activer le root sur sa tablette en fournissant son mot de passe :smiley:. On peut donc suater l'étape 1 et passer directement à la 2 et sa suite.
+
+**Ce guide s'adresse aux personnes ayant une expérience préalable de Linux. Ne suivez ce guide que si vous êtes à l'aise avec l'édition de fichiers, la navigation dans les systèmes de fichiers Linux, et si vous pouvez faire votre propre dépannage. Bien que cela ait fonctionné pour moi, je ne peux pas garantir que cela fonctionnera pour vous. Veuillez vous assurer que vous êtes sur le même firmware avant de l'exécuter. Ce guide suppose que vous avez une imprimante 3D. Aucun test n'a été efectué sur un Pad relié à plusieurs imprimantes. Mon imprimante principale est une Ender 5 S1, donc je ne peux pas garantir que cela fonctionnera pour d'autres imprimantes.**
 
 
 >Si vous rencontrez des difficultés, vous pouvez restaurer le dispositif en exécutant la commande suivante :
 >>`/usr/share/script/recovery.sh all`
+>>ou en suivant [le document du dossier «docs»](https://github.com/CrealityOfficial/Creality_Sonic_Pad_Firmware) permettant une réinstallation complète du système à l'aide des uotils Phoenix Suite et de l'image à réinstaller.
 
 Ce guide a été configuré pour le firmware du Sonic Pad "V1.0.6.35.154 02 Dec. 2022".
 
 MAJ 29/01/2023:
 - Obico fonctionne encore avec la mise à jour de janvier proposée par Creality (juste avant le nouvel an chinois :smirk:)
-- La section concernant Procd (5) a été modifiée pour fonctionner avec cron. Pas besoin de délai pour démarrer Obico après Moonraker 
+- La section concernant Procd (5) a été modifiée pour fonctionner avec cron (6). Pas besoin de délai pour démarrer Obico après Moonraker 
 
-A un moment donné, je chercherai à automatiser ceci dans un script. Tout ceci est codé en dur pour le moment.
+On pourrait chercher à automatiser ceci dans un script. Pour le moment, il suffit de suivre les étapes les unes après les autres.
 Voici les étapes de haut niveau :
 
 1. SSH et obtenir root
 2. Télécharger et configurer Obico
 3. Installer les dépendances
-4. Lier l'imprimante
-5. ~~Créer un service~~ Exécuter au démarrage
+4. Lier l'imprimante au site Obico
+5. ~~Créer un service~~ 
+6. Exécuter au démarrage à l'aide de cron
 
 C'est parti !
 
@@ -89,6 +97,7 @@ C'est parti !
 
 
   ### 3.2 Installer les modules requis du kit d'installation obico
+  
  **Ignorez l'échec de la construction de psutil. Cela sera corrigé plus tard.**
  
  
