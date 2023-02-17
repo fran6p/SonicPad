@@ -46,13 +46,24 @@ Après modifications:
 ```
 
 --------------------------------------
-Vous éteignez votre imprimante mais laissez le sonic pad allumé ? Êtes-vous fatigué de devoir appuyer sur 'Redémarrer Klipper' à chaque fois que vous rallumez votre imprimante? Vous aurez besoin de root, mais vous pouvez procéder comme suit pour que klipper redémarre automatiquement lorsque votre imprimante est rallumée.
-[Besoin d'un accès root]
+Vous éteignez votre imprimante mais laissez le sonic pad allumé ?
+
+Êtes-vous fatigué de devoir appuyer sur 'Redémarrer Klipper' à chaque fois que vous rallumez votre imprimante?
+
+Vous aurez besoin d'un accès root, pour pouvoir réaliser cette manipulation.
+
+Suivez ce qui suit pour que klipper redémarre automatiquement lorsque votre imprimante est rallumée.
+
+**[Besoin d'un accès root]**
+
 Créez `/etc/udev/rules.d/98-klipper.rules` avec le contenu:
+
 ```
 SUBSYSTEM=="usb", ATTRS{idVendor}=="1a86", ATTRS{idProduct}=="7523", ACTION=="add", RUN+="/bin/sh -c 'echo RESTART > /tmp/printer'"
 ```
+
 puis :
+
 ```
 chmod +x /etc/udev/rules.d/98-klipper.rules
 udevadm control --reload (or restart sonic pad)
@@ -64,7 +75,7 @@ Comment « oublier » un réseau sans fil avec votre Sonic Pad :
 Nécessite un accès root
 
 1. Connectez-vous en SSH et modifiez ce fichier avec un éditeur de texte: `/overlay/upper/etc/wifi/wpa_supplicant.conf`
-2. Supprimez votre réseau sans fil du fichier et remplacez-le par le fichier nouvellement enregistré.
+2. Supprimez votre réseau sans fil du fichier et remplacez-le par le nouveau puis enregistrer le fichier.
 3. Redémarrez votre tablette.
 
 Rappel: toujours conserver des sauvegardes de tous les fichiers modifiés afin de pouvoir revenir en arrière si nécessaire.
