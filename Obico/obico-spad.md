@@ -243,7 +243,7 @@ Pour le moment, chez moi. la tâche ne s'exécute pas au démarrage. **Le raccou
 
 **SOLUTION:** :smiley:
 
-Ne pas lancer le script «obico-start.sh» via une tâche cron mais l'appeler dans rc.local (à placer avant la ligne «exit 0»
+Ne pas lancer le script «obico-start.sh» via une tâche cron mais l'appeler dans rc.local (à placer avant la ligne «exit 0». Bien que la tâche cron ne fonctionne pas, on peut évidemment la supprimer puisqu'elle ne sert plus à rien: `crontab -r`
 
 Voilà, vous devriez être opérationnel avec Obico (anciennement Spaghetti Detective) !
 
