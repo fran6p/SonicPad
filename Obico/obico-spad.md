@@ -233,7 +233,7 @@ L'éditeur crontab utilisant vi sera lancé. Utiliser les commandes vi pour ins�
 
  Vérifier que la tâche cron a bien été créée  `crontab -l`.
  
-> `@reboot sleep 30s && /usr/share/moonraker-obico/obico-start.sh`
+> `@reboot sleep 30 && /usr/share/moonraker-obico/obico-start.sh`
 
 Redémarrer le Pad et vérifier que Obico démarre correctement. Utiliser `ps`pour vérifier que le processus `obico` a bien été lancé:
 
