@@ -168,18 +168,20 @@ C'est parti !
   STOP=1
   DEPEND=fstab
   USE_PROCD=1
-
+  PYTHONPATH=/usr/share/moonraker-obico
+  PROG="$PYTHONPATH/env/bin/python3"
+  
   start_service() {
       procd_open_instance
       procd_set_param stdout 1
       procd_set_param stderr 1
-      procd_set_param env PYTHONPATH=/usr/share/moonraker-obico
-      procd_set_param command /usr/share/moonraker-obico/env/bin/python3 -m moonraker_obico.app -c /usr/share/moonraker-obico/moonraker-obico.cfg
+      procd_set_param env $PYTHONPATH
+      procd_set_param command $PROG -m moonraker_obico.app -c $PYTHONPATH/moonraker-obico.cfg
       procd_close_instance
   }
   ```
   
-  Rendez ce script d'init exécutable `chmod +x /etc/init.d/moonraker_obico_service`
+  Rendre ce script d'init exécutable `chmod +x /etc/init.d/moonraker_obico_service`
   
   ### 5.2 Activer et exécuter le service
   
@@ -196,7 +198,7 @@ C'est parti !
 
 ## 6. Créer une tâche cron
 
-La méthode utilisant procd pour démarrer en tant que service peut fonctionner mais il faut qu'Obico attende que Moonraker soit complètement opérationnel avant de démarrer sinon il échoue et il faut alors le démarrer manuellement. On pourrait ajouter un délai (sleep) de 30 secondes pour s'assurer que cela se produise, mais cela retarderait le démarrage du service, une exécution en tant que tâche cron semble une meilleure solution.
+La méthode utilisant procd pour démarrer en tant que service fonctionne mais il faut qu'Obico attende que Moonraker soit complètement opérationnel avant de démarrer sinon il échoue et il faut alors le démarrer manuellement. On pourrait ajouter un délai (sleep) de 30 secondes pour s'assurer que cela se produise, mais cela retarderait le démarrage du service, une exécution en tant que tâche cron semble une meilleure solution.
 
 ## 6.1 Créer le script de démarrage
 
@@ -209,10 +211,12 @@ vi /usr/share/moonraker-obico/obico-start.sh
 avec le contenu suivant:
 
  ```
-#!/bin/bash
-set -e PYTHONPATH=/usr/share/moonraker-obico
-cd /usr/share/moonraker-obico
-/usr/share/moonraker-obico/env/bin/python3 -m moonraker_obico.app -c /usr/share/moonraker-obico/moonraker-obico.cfg
+#!/bin/sh
+PYTHONPATH=/usr/share/moonraker-obico
+PROG="$PYTHONPATH/env/bin/python3"
+
+cd $PYTHONPATH
+$PROG -m moonraker_obico.app -c $PYTHONPATH/moonraker-obico.cfg
  ```
 
 Rendre ce script exécutable :
