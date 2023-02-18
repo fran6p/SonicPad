@@ -158,6 +158,7 @@ C'est parti !
   Maintenant que tout est fonctionnel, nous allons configurer Obico pour qu'il fonctionne comme un service système au démarrage (daemon).
 
 ### 5.1 Création du service procd
+
   Editez et mettez ce qui suit `/etc/init.d/moonraker_obico_service`
 
 ```
@@ -178,13 +179,17 @@ C'est parti !
   }
   ```
   
+  Rendez ce script d'init exécutable `chmod +x /etc/init.d/moonraker_obico_service`
+  
   ### 5.2 Activer et exécuter le service
+  
  ```
   /etc/init.d/moonraker_obico_service enable
   /etc/init.d/moonraker_obico_service start
   ```
 
   ou
+  
   ```
   update-rc.d moonraker_obico_service defaults
   ```
@@ -196,11 +201,13 @@ La méthode utilisant procd pour démarrer en tant que service peut fonctionner 
 ## 6.1 Créer le script de démarrage
 
 Créer le fichier :
+
  ```
 vi /usr/share/moonraker-obico/obico-start.sh
  ```
 
 avec le contenu suivant:
+
  ```
 #!/bin/bash
 set -e PYTHONPATH=/usr/share/moonraker-obico
@@ -209,8 +216,9 @@ cd /usr/share/moonraker-obico
  ```
 
 Rendre ce script exécutable :
+
  ```
- chmod +x obico-start.sh
+ chmod +x /usr/share/moonraker-obico/obico-start.sh
  ```
 
 ## 6.2 Créer la tâche CRON
@@ -227,7 +235,9 @@ Redémarrer le Pad et vérifier que Obico démarre correctement. Utiliser `ps`po
 
 > `ps | grep obico`
 
-Voilà, vous devriez être opérationnel avec Obico (anciennement Spaghetti Detective) !
+Pour le moment, chez moi. la tâche ne s'exécute pas au démarrage :( Investigation en cours…
+
+~~Voilà, vous devriez être opérationnel avec Obico (anciennement Spaghetti Detective) !~~
 
 ![Obico](../Images/obico-e3s1-spad.jpg "Mon imprimante Ender3 S1 accessible sur le site Obico")
 
