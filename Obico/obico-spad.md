@@ -239,9 +239,13 @@ Redémarrer le Pad et vérifier que Obico démarre correctement. Utiliser `ps`po
 
 > `ps | grep obico`
 
-Pour le moment, chez moi. la tâche ne s'exécute pas au démarrage :( Investigation en cours…
+Pour le moment, chez moi. la tâche ne s'exécute pas au démarrage. **Le raccourci «@reboot» n'existe pas dans le Busybox d'OpenWRT**.
 
-~~Voilà, vous devriez être opérationnel avec Obico (anciennement Spaghetti Detective) !~~
+**SOLUTION:** :smiley:
+
+Ne pas lancer le script «obico-start.sh» via une tâche cron mais l'appeler dans rc.local (à placer avant la ligne «exit 0»
+
+Voilà, vous devriez être opérationnel avec Obico (anciennement Spaghetti Detective) !
 
 ![Obico](../Images/obico-e3s1-spad.jpg "Mon imprimante Ender3 S1 accessible sur le site Obico")
 
