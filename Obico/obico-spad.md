@@ -276,7 +276,7 @@ Contenu du fichier /etc/rc.local :
 sleep 30 && /usr/share/moonraker-obico/obico-start.sh
 
 exit 0
-´´´
+```
 
 Voilà, vous devriez être opérationnel avec Obico (anciennement Spaghetti Detective) !
 
