@@ -216,6 +216,7 @@ PYTHONPATH=/usr/share/moonraker-obico
 PROG="$PYTHONPATH/env/bin/python3"
 
 cd $PYTHONPATH
+source env/bin/activate
 $PROG -m moonraker_obico.app -c $PYTHONPATH/moonraker-obico.cfg
  ```
 
@@ -244,6 +245,38 @@ Pour le moment, chez moi. la tâche ne s'exécute pas au démarrage. **Le raccou
 **SOLUTION:** :smiley:
 
 Ne pas lancer le script «obico-start.sh» via une tâche cron mais l'appeler dans rc.local (à placer avant la ligne «exit 0». Comme la tâche cron ne fonctionne pas, on peut évidemment la supprimer puisqu'elle ne sert plus à rien: `crontab -r`
+
+Contenu du fichier /etc/rc.local :
+
+```
+# Put your custom commands here that should be executed once
+# the system init finished. By default this file does nothing.
+
+# hpout playback
+#amixer -D hw:audiocodec cset name='Headphone Switch' 1
+#amixer -D hw:audiocodec cset name='Headphone Volume' 3
+#amixer -D hw:audiocodec cset name='HpSpeaker Switch' 1
+
+# lineout playback
+#amixer -D hw:audiocodec cset name='LINEOUT Output Select' 'DAC_DIFFER'
+#amixer -D hw:audiocodec cset name='LINEOUT Switch' 1
+#amixer -D hw:audiocodec cset name='LINEOUT volume' 20
+
+# aec reference capture
+#amixer -D hw:audiocodec cset name='ADCL Input MIC1 Boost Switch' 1
+#amixer -D hw:audiocodec cset name='ADCR Input MIC2 Boost Switch' 1
+#amixer -D hw:audiocodec cset name='MIC1 gain volume' 0
+#amixer -D hw:audiocodec cset name='MIC2 gain volume' 0
+
+# mic capture, 24dB
+#amixer -D hw:sndac10710036 cset name='Channel 1 PGA Gain' 25
+#amixer -D hw:sndac10710036 cset name='Channel 2 PGA Gain' 25
+
+# Lancement d'Obico au demarrage apres un delai de 30s (Moonraker doit etre fonctionnel avant)
+sleep 30 && /usr/share/moonraker-obico/obico-start.sh
+
+exit 0
+´´´
 
 Voilà, vous devriez être opérationnel avec Obico (anciennement Spaghetti Detective) !
 
