@@ -1,16 +1,15 @@
 ## Permettre l'arrêt, le redémarrage de la tablette via les interfaces Web
 
-La version Creality de Moonraker utilise le systéme d'init pour lancer et arrêter des services en lieu et place de systemd.
- Sudo n'est pas implémenté avec OpenWRT (OS choisi par Creality).
+Creality utilise le systéme d'init pour lancer et arrêter les services en lieu et place de systemd. De plus `sudo` n'est pas implémenté avec le système d'exploitation choisi par Creality 5tinaLinux, dérivé d'OpenWRT).
 
-Les commandes Host et Services (Reboot, Shutdown, Restart Moonraker, Restart Klipper etc.) dans fluidd/mainsail ne fonctionnent pas à cause de moonraker 
-qui utilise la syntaxe debian (systemd).
+Les commandes Host et Services (Reboot, Shutdown, Restart Moonraker, Restart Klipper etc.) dans Fluidd/Mainsail ne fonctionnent pas à cause de Moonraker 
+qui lui, utilise la syntaxe Debian (systemd).
 
 Pour résoudre ce problème, il faut modifier le fichier `/usr/share/moonraker/moonraker/components/machine.py`. 
 
-Utiliser ces commandes pour la mise hors tension de l'hôte, le reboot et le redémarrage des services respectivement:
+Pour que les boutons de commande du client soient fonctionnels, il faut modifier l'appel de ces commandes pour la mise hors tension de l'hôte, le reboot et le redémarrage des services respectivement:
 
-   Rechercher les lignes contenant `self._execute_cmd("command")`
+   Rechercher dans le fichier `machine.py` les lignes contenant `self._execute_cmd( … )`
    
    Remplacer `"sudo shutdown now"` par `"poweroff"`, 
    
@@ -50,7 +49,7 @@ Après modifications:
             f'/etc/init.d/{service_name} {action}')
 ```
 
-Modifier ce qui suit pour permettre la vérification des services autorisés:
+Modifier également ce qui suit pour permettre la vérification des services autorisés:
 
 ```
 async def _find_active_services(self):
