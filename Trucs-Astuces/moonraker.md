@@ -59,7 +59,7 @@ async def _find_active_services(self):
 ```
 
 --------------------------------------
-## Redémaarer Klipper à l'allumage de l'imprimante
+## Redémarrer Klipper à l'allumage de l'imprimante
 
 Vous éteignez votre imprimante mais laissez le sonic pad allumé ? Fatigué de devoir appuyer sur 'Redémarrer Klipper' à chaque fois que vous rallumez votre imprimante?
 
@@ -81,17 +81,6 @@ puis :
 chmod +x /etc/udev/rules.d/98-klipper.rules
 udevadm control --reload (ou redémarrer le Sonic Pad)
 ```
-
---------------------------------------
-## Comment « oublier » un réseau sans fil avec votre Sonic Pad
-
-Nécessite un accès root
-
-1. Connectez-vous en SSH et modifiez ce fichier avec un éditeur de texte: `/overlay/upper/etc/wifi/wpa_supplicant.conf`
-2. Supprimez votre réseau sans fil du fichier et remplacez-le par le nouveau puis enregistrer le fichier.
-3. Redémarrez votre tablette.
-
-Rappel: toujours conserver des sauvegardes de tous les fichiers modifiés afin de pouvoir revenir en arrière si nécessaire.
 
 --------------------------------------
 
