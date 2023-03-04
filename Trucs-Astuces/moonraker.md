@@ -8,9 +8,12 @@ Pour résoudre ce problème, il faut modifier le fichier `/usr/share/moonraker/m
 
 Utiliser ces commandes pour la mise hors tension de l'hôte, le reboot et le redémarrage des services respectivement:
 
-   Rechercher les lignes contenant `self._execute_cmd("command")` 
+   Rechercher les lignes contenant `self._execute_cmd("command")`
+   
    Remplacer `"sudo shutdown now"` par `"poweroff"`, 
+   
    Remplacer `"sudo shutdown -r now"` par `"reboot"`, 
+   
    Remplacer `f'sudo systemctl {action} {service_name}'` par `f'/etc/init.d/{service_name} {action}'`
 
 
