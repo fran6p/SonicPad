@@ -7,12 +7,12 @@ qui utilise la syntaxe debian (systemd).
 Pour résoudre ce problème, il faut modifier le fichier `/usr/share/moonraker/moonraker/components/machine.py`. 
 
 Utiliser ces commandes pour la mise hors tension de l'hôte, le reboot et le redémarrage des services respectivement:
-```
-self._execute_cmd("command") : 
-"poweroff", 
-"reboot", 
-f'/etc/init.d/{service_name} {action}'
-```
+
+   Rechercher les lignes contenant `self._execute_cmd("command")` 
+   Remplacer `"sudo shutdown now"` par `"poweroff"`, 
+   Remplacer `"sudo shutdown -r now"` par `"reboot"`, 
+   Remplacer `f'sudo systemctl {action} {service_name}'` par `f'/etc/init.d/{service_name} {action}'`
+
 
 Avant modifications:
 ```
@@ -59,17 +59,20 @@ async def _find_active_services(self):
 ```
 
 --------------------------------------
+
 ## Redémarrer Klipper à l'allumage de l'imprimante
 
-Vous éteignez votre imprimante mais laissez le sonic pad allumé ? Fatigué de devoir appuyer sur 'Redémarrer Klipper' à chaque fois que vous rallumez votre imprimante?
+Extinction de l'imprimante alors que le Sonic Pad reste allumé ?
 
-Vous aurez besoin d'un accès root, pour pouvoir réaliser cette manipulation.
+Trop fatiguant de devoir appuyer sur 'Redémarrer Klipper' à chaque fois qque l'imprimante est allumée ?
 
-Suivez ce qui suit pour que klipper redémarre automatiquement lorsque votre imprimante est rallumée.
+Un accès root est onligatoire pour pouvoir réaliser cette manipulation.
+
+Suivre ce qui suit pour que klipper redémarre automatiquement lorsque l'imprimante est rallumée.
 
 **[Besoin d'un accès root]**
 
-Créez `/etc/udev/rules.d/98-klipper.rules` avec le contenu:
+Créer `/etc/udev/rules.d/98-klipper.rules` avec le contenu:
 
 ```
 SUBSYSTEM=="usb", ATTRS{idVendor}=="1a86", ATTRS{idProduct}=="7523", ACTION=="add", RUN+="/bin/sh -c 'echo RESTART > /tmp/printer'"
