@@ -32,4 +32,5 @@ network={
 Redémarrer la tablette via un `reboot`
 
 **Toujours conserver des sauvegardes de tous les fichiers modifiés afin de pouvoir revenir en arrière si nécessaire.**
+
 `cp /overlay/upper/etc/wifi/wpa_supplicant.conf /overlay/upper/etc/wifi/wpa_supplicant.conf.bkup`
