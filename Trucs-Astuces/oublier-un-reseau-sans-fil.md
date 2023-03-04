@@ -5,6 +5,7 @@
 1. Se connecter en SSH.
 
 2. Via un éditeur de texte, modifier le fichier : **/overlay/upper/etc/wifi/wpa_supplicant.conf**
+
 `vi /overlay/upper/etc/wifi/wpa_supplicant.conf`
 
 3. Supprimer le réseau sans fil du fichier (toute la section débutant par network={ … } ) :
