@@ -4,11 +4,15 @@
 
 1. Se connecter en SSH.
 
-2. Via un éditeur de texte, modifier le fichier : **/overlay/upper/etc/wifi/wpa_supplicant.conf**
+2. **Toujours conserver des sauvegardes de tous les fichiers modifiés afin de pouvoir revenir en arrière si nécessaire.**
+
+`cp /overlay/upper/etc/wifi/wpa_supplicant.conf /overlay/upper/etc/wifi/wpa_supplicant.conf.bkup`
+
+3. Via un éditeur de texte, modifier le fichier : **/overlay/upper/etc/wifi/wpa_supplicant.conf**
 
 `vi /overlay/upper/etc/wifi/wpa_supplicant.conf`
 
-3. Supprimer le réseau sans fil du fichier (toute la section débutant par network={ … } ) :
+4. Supprimer le réseau sans fil du fichier (toute la section débutant par network={ … } ) :
 ```
 ctrl_interface=/etc/wifi/sockets
 disable_scan_offload=1
@@ -32,11 +36,6 @@ network={
 }
 
 ```
-4. Enregistrer le fichier modifié ( ESC :wq ).
+5. Enregistrer le fichier modifié ( ESC :wq ).
 
-5. Redémarrer la tablette via un `reboot`
-
-***RAPPEL:***
-**Toujours conserver des sauvegardes de tous les fichiers modifiés afin de pouvoir revenir en arrière si nécessaire.**
-
-`cp /overlay/upper/etc/wifi/wpa_supplicant.conf /overlay/upper/etc/wifi/wpa_supplicant.conf.bkup`
+6. Redémarrer la tablette via un `reboot`
