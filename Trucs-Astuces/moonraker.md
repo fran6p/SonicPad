@@ -1,3 +1,5 @@
+## Permettre l'arrêt, le redémarrage de la tablette via les interfaces Web
+
 La version Creality de Moonraker utilise le systéme d'init pour lancer et arrêter des services en lieu et place de systemd.
  Sudo n'est pas implémenté avec OpenWRT (OS choisi par Creality).
 
