@@ -1,4 +1,4 @@
-# Comment « oublier » un réseau sans fil avec votre Sonic Pad :
+# Comment « oublier » un réseau sans fil avec la tablette Sonic Pad :
 
 ***Préalable:*** obtenir un accès root
 
@@ -18,7 +18,7 @@ network={
         priority=1
 }
 
-    network={
+network={
         ssid="NOM-DU-RESEAU-SANS-FIL"
         scan_ssid=1
         psk="motdepassedureseauwifi"
@@ -31,5 +31,5 @@ network={
 
 Redémarrer la tablette via un `reboot`
 
-Toujours conserver des sauvegardes de tous les fichiers modifiés afin de pouvoir revenir en arrière si nécessaire.
+**Toujours conserver des sauvegardes de tous les fichiers modifiés afin de pouvoir revenir en arrière si nécessaire.**
 `cp /overlay/upper/etc/wifi/wpa_supplicant.conf /overlay/upper/etc/wifi/wpa_supplicant.conf.bkup`
