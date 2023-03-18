@@ -14,7 +14,20 @@ wget "https://raw.githubusercontent.com/th33xitus/kiauh/master/resources/gcode_s
 chmod +x gcode_shell_command.py
 ```
 
-Ce script ajoute un GCode étendu: RUN_SHELL_COMMAND utilisable dans des macros Gcode. Il suffit de créer et les macros et les scripts shell voulus.
+Ce script ajoute un GCode étendu: RUN_SHELL_COMMAND utilisable dans des macros Gcode. Un fichier shell_command.cfg doit être ajouté à la configuration via une directive «include» dans le printer.cfg. Celui contiendra des sections à l'identique de [gcode_macro] pour l'appel des scripts, via des macros «shell_command» [gcode_shell_command …]. Il suffit de créer les macros Gcode, les macros Shell_command et les scripts shell voulus.
+
+Exemple extrait du fichier shell_command.cfg :
+```
+[gcode_shell_command adxl_x]
+command: sh /mnt/UDISK/printer_config/shell_commands/adxl_x.sh 
+timeout: 300.
+verbose: True
+
+[gcode_shell_command adxl_y]
+command: sh /mnt/UDISK/printer_config/shell_commands/adxl_y.sh 
+timeout: 300.
+verbose: True
+```
 
 Exemple pour le test de résonance :
 
@@ -130,7 +143,7 @@ Il suffit de créer une nouvelle macro pour pouvoir effectuer la sauvegarde dire
 description: Backup csv files registered in /tmp directory emptied on poweroff
 gcode:
     M118 Backup all csv files !
-    RUN_SHELL_COMMAND CMD=adxl_x
+    RUN_SHELL_COMMAND CMD=backup_csv_files
     M118 Backup done
 ```
 
