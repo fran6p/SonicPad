@@ -11,7 +11,7 @@ Toutes les manipulations sont effectuées en tant qu'utilisateur «root» :
 
 `wget "https://raw.githubusercontent.com/th33xitus/kiauh/master/resources/gcode_shell_command.py"`
 
-Ce script ajoute un GCode étendu: RUN_SHELL_COMMAND utilisable dans des macros «gcode_macro». Il suffit de créer et les macros et les scripts shell voulus.
+Ce script ajoute un GCode étendu: RUN_SHELL_COMMAND utilisable dans des macros Gcode. Il suffit de créer et les macros et les scripts shell voulus.
 
 Exemple pour le test de résonance :
 
