@@ -2,6 +2,7 @@ L'utilisateur th33xitus, auteur de [KIAUH](https://github.com/th33xitus/kiauh) a
 
 La première étape est d'installer le script python au bon endroit pour que Klipper le gère.
 Toutes les manipulations sont effectuées en tant qu'utilisateur «root» :
+
 1- Se placer dans le répertoire souhaité :
 
 `cd /usr/share/klippy/extras`
