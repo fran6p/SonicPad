@@ -5,11 +5,14 @@ Toutes les manipulations sont effectuées en tant qu'utilisateur «root» :
 
 1- Se placer dans le répertoire souhaité :
 
-`cd /usr/share/klippy/extras`
+`cd /usr/share/klipper/klippy/extras`
 
-2- Récupérer le script :
+2- Récupérer le script et le rendre exécutable :
 
-`wget "https://raw.githubusercontent.com/th33xitus/kiauh/master/resources/gcode_shell_command.py"`
+```
+wget "https://raw.githubusercontent.com/th33xitus/kiauh/master/resources/gcode_shell_command.py"
+chmod +x gcode_shell_command.py
+```
 
 Ce script ajoute un GCode étendu: RUN_SHELL_COMMAND utilisable dans des macros Gcode. Il suffit de créer et les macros et les scripts shell voulus.
 
