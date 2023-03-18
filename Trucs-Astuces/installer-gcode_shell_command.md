@@ -1,11 +1,13 @@
-L'utilisateur th33xitus, auteur de [KIAUH]<https://github.com/th33xitus/kiauh> a créé un module python permettant d'exécuter des scripts shell via des macros Klipper.
+L'utilisateur th33xitus, auteur de [KIAUH](https://github.com/th33xitus/kiauh) a créé un module python permettant d'exécuter des scripts shell via des macros Klipper.
 
 La première étape est d'installer le script python au bon endroit pour que Klipper le gère.
 Toutes les manipulations sont effectuées en tant qu'utilisateur «root» :
 1- Se placer dans le répertoire souhaité :
+
 `cd /usr/share/klippy/extras`
 
 2- Récupérer le script :
+
 `wget "https://raw.githubusercontent.com/th33xitus/kiauh/master/resources/gcode_shell_command.py"`
 
 Ce script ajoute un GCode étendu: RUN_SHELL_COMMAND utilisable dans des macros «gcode_macro». Il suffit de créer et les macros et les scripts shell voulus.
@@ -128,6 +130,4 @@ gcode:
     M118 Backup done
 ```
 
-
 :smiley:
-
