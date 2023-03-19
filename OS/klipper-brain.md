@@ -3,6 +3,10 @@ dans le répertoire `/usr/share/klipper-brain`
 
 Les firmwares sont dans `/usr/share/klipper-brain/printer_config/firmware`. le contenu à la date de la dernière mise à jour (mars 2023) :
 
+<details>
+  <summary>(Cliquez pour agrandir!)</summary>
+
+
 ```
 root@spad-1168:~# ls -al /usr/share/klipper-brain/printer_config/firmware/
 drwxr-x--x    3 root     root           381 Mar  6 07:05 .
@@ -24,7 +28,13 @@ drwxr-x--x    3 root     root           381 Mar  6 07:05 ..
 -rwxr-x--x    1 root     root         21440 Mar  6 07:05 klipper_401_v02.bin 
 ```
 
+ </details>
+  
 Les configurations des imprimantes sont dans `/usr/share/klipper-brain/printer_config/config`, la liste actuelle (mars 2023) :
+
+<details>
+  <summary>(Cliquez pour agrandir!)</summary>
+
 
 ```
 root@spad-1168:~# ls -al /usr/share/klipper-brain/printer_config/config/
@@ -81,9 +91,16 @@ drwxr-x--x    6 root     root           376 Mar  6 07:05 ..
 -rwxr-x--x    1 root     root          6712 Mar  6 07:05 printer_test.cfg
 -rwxr-x--x    1 root     root          6554 Mar  6 07:05 printer_user.cfg 
 ```
+  
+</details>
 
 Le répertoire `/usr/share/klipper-brain/printer_config/`contient également les fichiers de configuration de Moonraker (moonraker.conf),
 le reverse proxy (nginx.conf), la prise en charge des timelapse (timelapse.cfg) et la prise en charge de caméras (webcam.txt, webcam1.txt) :
+
+<details>
+  <summary>(Cliquez pour agrandir!)</summary>
+
+
 ```
 root@spad-1168:~# ls -al /usr/share/klipper-brain/printer_config/
 drwxr-x--x    6 root     root           376 Mar  6 07:05 .
@@ -107,6 +124,8 @@ drwxr-x--x    2 root     root           849 Mar  6 07:05 png
 -rwxr-x--x    1 root     root          2593 Mar  6 07:05 webcam1.txt
 
 ```
+
+</details>
 
 Le fichier readme.txt reprend les modifications apportées par Creality (traduction automatique Chinois-Français ci-dessous) :
 
