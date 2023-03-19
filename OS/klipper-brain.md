@@ -112,89 +112,88 @@ Le fichier readme.txt reprend les modifications apportées par Creality (traduct
 
 <details>
   <summary>(Cliquez pour agrandir!)</summary>
- 
-```
-V1.1 Changements de version
-1. ajuster la vitesse de [safe_z_home] à 200
-2. ajuster [printer], max_accel limit to 5000, enable max_z_velocity:5,max_z_accel : 100
-3. ajuster [extruder], désactiver pressure_advance
-4. ajuster [extruder], la température maximale de la buse est de 305 pour ender3S1 PRO, la température maximale est de 265 pour ender3S1/ender3V2
-5. ajuster [bed_mesh], la limite de vitesse de ender3V2 est 120, la limite de vitesse de ender3S1 PRO/ender3S1 est 150
-6. ajouter la configuration time lapse [include /mnt/UDISK/printer_config/timelapse.cfg]
 
-Version V1.2 changements
-1. suppression du code de configuration redondant
-2) Modifier la valeur de [virtual_sdcard] pour le chemin : ~/gcode_files
-3. modifier Ender 3V2 [extruder] [heater_bed] valeur min_temp à 0
-4. nouvelles instructions pour la compilation et l'installation du firmware de la partie inférieure du klipper
+   V1.1 Changements de version
+   1. ajuster la vitesse de [safe_z_home] à 200
+   2. ajuster [printer], max_accel limit to 5000, enable max_z_velocity:5,max_z_accel : 100
+   3. ajuster [extruder], désactiver pressure_advance
+   4. ajuster [extruder], la température maximale de la buse est de 305 pour ender3S1 PRO, la température maximale est de 265 pour ender3S1/ender3V2
+   5. ajuster [bed_mesh], la limite de vitesse de ender3V2 est 120, la limite de vitesse de ender3S1 PRO/ender3S1 est 150
+   6. ajouter la configuration time lapse [include /mnt/UDISK/printer_config/timelapse.cfg]
 
-Changements dans la version V1.3
-1.Correction d'urgence pour le champ [display] causant le problème de chauffage de la buse de la CR6SE. Ce champ s'applique à l'écran matriciel, l'écran sonique est inutile, supprimez ce champ.
-2) Correction Ender3 V2-CRtouch [stepper_z], enable_pin : !PC3, non activé, ce qui fait que l'axe Z ne se soulève pas.
-3. changer le nom du modèle Ender 3V2-CRtouch en Ender 3V2 ABL
+   Version V1.2 changements
+   1. suppression du code de configuration redondant
+   2) Modifier la valeur de [virtual_sdcard] pour le chemin : ~/gcode_files
+   3. modifier Ender 3V2 [extruder] [heater_bed] valeur min_temp à 0
+   4. nouvelles instructions pour la compilation et l'installation du firmware de la partie inférieure du klipper
 
-Modifications de la V1.4
-1. modifier Ender3-S1 [safe_z_home] home_xy_position:155,155
-2) Modifier [stepper_x] homing_speed : 80
-3) Modifier [stepper_y] homing_speed : 80
-4) Ender-3S1/S1 Pro modifié [stepper_y] position_max : 230
-5. nouveau modèle de taille de moulage # printer_size : 220x220x270
-6. nouveau [adxl345] spi_speed : 2000000
+   Changements dans la version V1.3
+   1.Correction d'urgence pour le champ [display] causant le problème de chauffage de la buse de la CR6SE. Ce champ s'applique à l'écran matriciel, l'écran sonique est inutile, supprimez ce champ.
+   2) Correction Ender3 V2-CRtouch [stepper_z], enable_pin : !PC3, non activé, ce qui fait que l'axe Z ne se soulève pas.
+   3. changer le nom du modèle Ender 3V2-CRtouch en Ender 3V2 ABL
 
-Modification de la version V1.5
-1. correction du nivellement automatique, l'erreur signalée est hors plage
+   Modifications de la V1.4
+   1. modifier Ender3-S1 [safe_z_home] home_xy_position:155,155
+   2) Modifier [stepper_x] homing_speed : 80
+   3) Modifier [stepper_y] homing_speed : 80
+   4) Ender-3S1/S1 Pro modifié [stepper_y] position_max : 230
+   5. nouveau modèle de taille de moulage # printer_size : 220x220x270
+   6. nouveau [adxl345] spi_speed : 2000000
 
-Modifications V1.6
-1. suppression de la configuration de la détection des matériaux cassés de la série Ender3-V2
-2. ajout du fichier de configuration de la carte mère Ender3-V2-V4.2.7
-3. nouveau fichier de configuration de la carte mère Ender3V2-CRtouch-V4.2.7
-4. modification du nom du fichier de configuration dans un style unifié
+   Modification de la version V1.5
+   1. correction du nivellement automatique, l'erreur signalée est hors plage
 
-Changements dans la version V1.7
-1. nivellement adaptatif, ajout d'un algorithme de double interpolation
-2. modification de la spécification du nom du modèle
+   Modifications V1.6
+   1. suppression de la configuration de la détection des matériaux cassés de la série Ender3-V2
+   2. ajout du fichier de configuration de la carte mère Ender3-V2-V4.2.7
+   3. nouveau fichier de configuration de la carte mère Ender3V2-CRtouch-V4.2.7
+   4. modification du nom du fichier de configuration dans un style unifié
 
-Modification de la version V1.8
-1. ajouter [verify_heater extruder] 
+   Changements dans la version V1.7
+   1. nivellement adaptatif, ajout d'un algorithme de double interpolation
+   2. modification de la spécification du nom du modèle
+
+   Modification de la version V1.8
+   1. ajouter [verify_heater extruder] 
       check_gain_time : 200 
       hystérésis : 5
-2. modifier les valeurs PID par défaut de [extruder] et [heater_bed].
+   2. modifier les valeurs PID par défaut de [extruder] et [heater_bed].
 
-Changements dans la V1.9
-1) Modifier [safe_z_home] home_xy_position : 145,155 dans Ender3-S1/S1Pro
-2) Modifier [bltouch] x_offset : -30.0 dans Ender3-S1/S1Pro
+   Changements dans la V1.9
+   1) Modifier [safe_z_home] home_xy_position : 145,155 dans Ender3-S1/S1Pro
+   2) Modifier [bltouch] x_offset : -30.0 dans Ender3-S1/S1Pro
 
-Version V2.0 Modifications
-1) Modifier [printer] max_z_velocity : 10 max_z_accel : 1000 dans Ender3-S1/S1 Pro
-2. ajouter [printer] square_corner_velocity : 5.0 dans Ender3-S1/S1 Pro/V2
+   Version V2.0 Modifications
+   1) Modifier [printer] max_z_velocity : 10 max_z_accel : 1000 dans Ender3-S1/S1 Pro
+   2. ajouter [printer] square_corner_velocity : 5.0 dans Ender3-S1/S1 Pro/V2
 
-V2.1 Modifications
-1) Modification de [stepper_z] position_max : 275 dans Ender3-S1/S1 Pro
-2. modifier [stepper_z] position_max : 255 dans Ender3-V2
+   V2.1 Modifications
+   1) Modification de [stepper_z] position_max : 275 dans Ender3-S1/S1 Pro
+   2. modifier [stepper_z] position_max : 255 dans Ender3-V2
 
-Changements dans la version V2.2
-1) Modifier la définition de la macro [gcode_macro CANCEL_PRINT].
-2. modifier [stepper_x] position_max : 240 dans Ender3-V2-CRtouch
-3. mise à jour du firmware pour ajouter la logique sous-jacente du chauffage des exceptions.
+   Changements dans la version V2.2
+   1) Modifier la définition de la macro [gcode_macro CANCEL_PRINT].
+   2. modifier [stepper_x] position_max : 240 dans Ender3-V2-CRtouch
+   3. mise à jour du firmware pour ajouter la logique sous-jacente du chauffage des exceptions.
 
-V2.3 Modifications
-1) Modifier Ender3-S1/S1 Pro [stepper_x] position_min : -6 position_endstop : -6 
-2. suppression de la macro-commande Ender3-V2 [delayed_gcode AUTOSTART].
+   V2.3 Modifications
+   1) Modifier Ender3-S1/S1 Pro [stepper_x] position_min : -6 position_endstop : -6 
+   2. suppression de la macro-commande Ender3-V2 [delayed_gcode AUTOSTART].
+ 
+   V2.4 Modifications
+   1. modifier Ender3-S1/S1 Pro [stepper_x] position_min : -3 position_endstop : -3 
 
-V2.4 Modifications
-1. modifier Ender3-S1/S1 Pro [stepper_x] position_min : -3 position_endstop : -3 
+   V2.5 Modifications
+   1. modifier Ender3-S1/S1 Pro [stepper_x] position_min : -5 position_endstop : -5 
+   2. modifier Ender3-S1/S1 Pro plage d'impression
 
-V2.5 Modifications
-1. modifier Ender3-S1/S1 Pro [stepper_x] position_min : -5 position_endstop : -5 
-2. modifier Ender3-S1/S1 Pro plage d'impression
+   Modifications de la version V2.6
+   1. nouveau modèle Ender3-V2 Neo
+   2. nouveau modèle Ender3-s1pro-103
+   2. nouvelle définition de macro [gcode_macro G29].
 
-Modifications de la version V2.6
-1. nouveau modèle Ender3-V2 Neo
-2. nouveau modèle Ender3-s1pro-103
-2. nouvelle définition de macro [gcode_macro G29].
-
-V2.7 Modifications
-1.modifié Ender3-V2-CRtouch-V4.2.7 [stepper_z] Configuration tactile modifiée
-```
+   V2.7 Modifications
+   1.modifié Ender3-V2-CRtouch-V4.2.7 [stepper_z] Configuration tactile modifiée
+  
 </details>
 
