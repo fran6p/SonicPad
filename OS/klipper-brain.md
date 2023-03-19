@@ -110,6 +110,9 @@ drwxr-x--x    2 root     root           849 Mar  6 07:05 png
 
 Le fichier readme.txt reprend les modifications apportées par Creality (traduction automatique Chinois-Français ci-dessous) :
 
+<details>
+  <summary>(Cliquez pour agrandir!)</summary>
+ 
 ```
 V1.1 Changements de version
 1. ajuster la vitesse de [safe_z_home] à 200
@@ -193,4 +196,5 @@ Modifications de la version V2.6
 V2.7 Modifications
 1.modifié Ender3-V2-CRtouch-V4.2.7 [stepper_z] Configuration tactile modifiée
 ```
+</details>
 
