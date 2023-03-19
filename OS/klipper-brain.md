@@ -216,3 +216,4 @@ Le fichier readme.txt reprend les modifications apportées par Creality (traduct
   
 </details>
 
+L'archive [printer_config.zip](https://github.com/fran6p/SonicPad/raw/main/Fichiers/printer_config.zip) contient l'ensemble des fichiers du répertoire printer_config (à la date de la mise à jour de mars 2023).
