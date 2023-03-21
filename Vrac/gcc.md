@@ -3,6 +3,7 @@
 ```
 root@spad-1168:~# echo $PATH
 /usr/share/gcc-arm-none-eabi/bin/:/usr/share/avr-gcc/bin:/usr/sbin:/usr/bin:/sbin:/bin
+
 root@spad-1168:~# ls -l /usr/share/gcc-arm-none-eabi/bin
 -rwxr-x--x    1 root     root        741224 Nov 22 03:23 arm-none-eabi-addr2line
 -rwxr-x--x    1 root     root        764136 Nov 22 03:23 arm-none-eabi-ar
@@ -32,6 +33,7 @@ root@spad-1168:~# ls -l /usr/share/gcc-arm-none-eabi/bin
 -rwxr-x--x    1 root     root        742656 Nov 22 03:23 arm-none-eabi-size
 -rwxr-x--x    1 root     root        742784 Nov 22 03:23 arm-none-eabi-strings
 -rwxr-x--x    1 root     root        898080 Nov 22 03:23 arm-none-eabi-strip
+
 root@spad-1168:~# ls -l /usr/share/avr-gcc/bin/
 -rwxr-x--x    1 root     root        604784 Nov 22 03:23 avr-addr2line
 -rwxr-x--x    1 root     root        628552 Nov 22 03:23 avr-ar
@@ -60,7 +62,6 @@ root@spad-1168:~# ls -l /usr/share/avr-gcc/bin/
 -rwxr-x--x    1 root     root        609616 Nov 22 03:23 avr-size
 -rwxr-x--x    1 root     root        605608 Nov 22 03:23 avr-strings
 -rwxr-x--x    1 root     root        761056 Nov 22 03:23 avr-strip
-root@spad-1168:~#
 
 root@spad-1168:~# find / -name *gcc*
 /lib/libgcc_s.so.1
@@ -229,7 +230,6 @@ root@spad-1168:~# find / -name *gcc*
 /usr/share/klipper/lib/samd21/samd21a/gcc
 /usr/share/klipper/lib/samd51/samd51a/gcc
 /usr/share/klipper/scripts/check-gcc.sh
-root@spad-1168:~#
 
 root@spad-1168:/usr/lib/opkg/info# cat libgcc.control
 Package: libgcc
@@ -243,6 +243,7 @@ Maintainer: Felix Fietkau <nbd@openwrt.org>
 Architecture: sunxi
 Installed-Size: 30726
 Description:  GCC support library
+
 root@spad-1168:/usr/lib/opkg/info# cat avr-gcc.control
 Package: avr-gcc
 Version: 5.4.0-1
@@ -261,5 +262,5 @@ Section: base
 Architecture: sunxi
 Installed-Size: 96859148
 Description:  gcc-arm-none-eabi toolchain run on aarch64 TinaLinux.
-root@spad-1168:/usr/lib/opkg/info#
+
 ```
