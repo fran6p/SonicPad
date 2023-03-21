@@ -8,7 +8,8 @@ de mauvaises manipulations (un rm -rf / est si vite arrivé ).
 
 Le système d'exploitation n'est pas un dérivé Debian (Ubuntu ou autre) mais est basé sur OpenWRT (Tina linux, version Sunxi Allwinner).
 
-=> pas de /home donc difficile pour l'utilisateur «creality» d'y faire des installations (opkg est d'ailleurs bloqué, les dépôts ne sont pas déclarés )
+Il n'y a pas de /home donc difficile pour l'utilisateur «creality» d'y faire des installations (opkg est d'ailleurs bloqué, les dépôts ne sont pas déclarés ).
+Le systéme d'init n'est pas basé sur systemd, sudo n'est ni installé ni disponible.
 
 L'interface graphique de cette tablette n'est pas basée sur Klipperscreen mais utilise QT (un peu comme leurs écrans tactiles).
 
@@ -38,11 +39,13 @@ lrwxrwxrwx    1 root     root            14 Jan  1  2020 rootfs_data -> /dev/mmc
 ### J'ai reçu la tablette SonicPad, et après ?
 
 Vous avez donc acheté une tablette Creality Sonic Pad mais vous ne comprenez pas vraiment ce qu'elle fait ni comment elle vous aide à imprimer plus vite.
+
 Creality a fait un excellent travail de marketing en présentant le SonicPad (SP) comme un appareil «magique» qui rendra instantanément votre imprimante plus
 rapide. Sans vous dire, expliquer tout ce que vous devez faire pour obtenir des impressions plus rapides et de qualité.
-La première étape, une fois que vous avez installé le SP et que vous l'avez connecté à votre imprimante, est d'essayer d'imprimer un fichier que vous avez
-déjà imprimé avec succès. Cela vous permettra de vous assurer que tout fonctionne comme il se doit et que vous n'avez pas de problème qui pourrait vous
-retarder.
+
+La première étape, c'est de «choisir» l'imprimante à gérer. Une fois fait, le firmware Klipper sera installé sur la carte contrôleur (via USB ou via carte SD) et le fichier printer.cfg correspondant à l'imprimante sélectionnée sera transféré dans le dossier regroupant les configurations, ensuite des tests de vérifications basiques du matériel seront proposés pour vérifier le bon fonctionnement a minima de l'imprimante.
+
+La première chose à tenter sera d'essayer d'imprimer un fichier que vous avez déjà imprimé avec succès. Cela vous permettra de vous assurer que tout fonctionne comme il se doit et que vous n'avez pas de problème blocant.
 
 Ensuite, assurez-vous que vos rétractions sont calibrées, l'extrudeuse également (Esteps => rotation_distance) via la méthode de 100 mm demandés à extruder =
  100 mm extrudés.
@@ -65,4 +68,3 @@ dans ses réglages, sans oublier évidemment l'abondante [documentation](https:/
 La lecture de [cette page](https://ellis3dp.com/Print-Tuning-Guide/articles/misconceptions.html) permet d'éclairer quelques idées fausses et mauvais conseils.
 
 :smiley:
-https://ellis3dp.com/Print.../articles/misconceptions.html
