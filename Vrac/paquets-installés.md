@@ -1,10 +1,10 @@
 ## Liste des paquets installés (ou pas ( -1 ))
 
 <details>
-  < Clic >
+  
  
-    ```
-    root@spad-1168:/usr/share/klipper# opkg list-installed
+```
+root@spad-1168:/usr/share/klipper# opkg list-installed
 adb - 0.0.1-1
 ai-engine - 1.0-1
 alsa-conf-aw - 1.0.0-1
@@ -352,6 +352,6 @@ zoneinfo-pacific - 2018i-1
 zoneinfo-poles - 2018i-1
 zoneinfo-simple - 2018i-1
 zoneinfo-southamerica - 2018i-1
-    ```
+```
     
 </details>    
