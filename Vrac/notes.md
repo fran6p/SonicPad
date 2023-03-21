@@ -1,21 +1,21 @@
 ## Réflexions diverses
 
 La mise à jour de début novembre permet de préparer un firmware directement sur la tablette sans passer par une machine virtuelle ou plus simple 
-pour les Windowsiens par WSL 😉 Le manuel de Creality a d'ailleurs été mis à jour pour en tenir compte (pages 22 et au-delà).
+pour les Windowsiens par WSL  Le manuel de Creality a d'ailleurs été mis à jour pour en tenir compte (pages 22 et au-delà).
 
 L'accès root n'apporterait pas grand chose aux utilisateurs sans connaissances et pratique de Linux, à part mettre le boxon en cas
-de mauvaises manipulations (un rm -rf / est si vite arrivé 😃 ).
+de mauvaises manipulations (un rm -rf / est si vite arrivé ).
 
 Le système d'exploitation n'est pas un dérivé Debian (Ubuntu ou autre) mais est basé sur OpenWRT (Tina linux, version Sunxi Allwinner).
 
-=> pas de /home donc difficile pour l'utilisateur «creality» d'y faire des installations (opkg est d'ailleurs bloqué, les dépôts ne sont pas déclarés 🙁 )
+=> pas de /home donc difficile pour l'utilisateur «creality» d'y faire des installations (opkg est d'ailleurs bloqué, les dépôts ne sont pas déclarés )
 
 L'interface graphique de cette tablette n'est pas basée sur Klipperscreen mais utilise QT (un peu comme leurs écrans tactiles).
 
 Bref, c'est une jolie tablette pas si mal réalisée que ça d'ailleurs capable de mettre le pied à l'étrier à quelques utilisateurs souhaitant
 goûter à Klipper mais pour aller plus loin, ces utilisateurs ne pourront se dispenser de la lecture et relecture des nombreuses documentations.
 Ce n'est à peu près «plug and play» que pour les modèles d'imprimantes Creality fournis à condition que l'imprimante soit restée «stock» 
-(pas «d'améliorations» matérielles ;-) ).
+(pas «d'améliorations» matérielles :smirk: ).
 
 ### Table des partitions
 
