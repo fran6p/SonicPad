@@ -1,4 +1,4 @@
-# GCC
+## GCC
 
 ```
 root@spad-1168:~# echo $PATH
