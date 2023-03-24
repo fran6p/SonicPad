@@ -4,7 +4,7 @@ La mise à jour de début novembre permet de préparer un firmware directement s
 pour les Windowsiens par WSL  Le manuel de Creality a d'ailleurs été mis à jour pour en tenir compte (pages 22 et au-delà).
 
 L'accès root n'apporterait pas grand chose aux utilisateurs sans connaissances et pratique de Linux, à part mettre le boxon en cas
-de mauvaises manipulations (un rm -rf / est si vite arrivé ).
+de mauvaises manipulations (un rm -rf / est si vite arrivé :smirk: ).
 
 Le système d'exploitation n'est pas un dérivé Debian (Ubuntu ou autre) mais est basé sur OpenWRT (Tina linux, version Sunxi Allwinner).
 
