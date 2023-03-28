@@ -914,7 +914,7 @@ gcode:
 
  </details>
  
-Les fichiers sont disponibles dans le dossier… Fichiers :
+Les fichiers sont disponibles dans le dossier… Fichiers (clic droit pour enregistrer :smirk: ) :
 -  le [printer.cfg](https://github.com/fran6p/SonicPad/raw/main/Fichiers/printer.cfg),
 -  les [macros](https://github.com/fran6p/SonicPad/raw/main/Fichiers/macros.cfg) .
 
