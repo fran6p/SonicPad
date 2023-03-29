@@ -17,9 +17,11 @@ max_temp: 75
 ```
 
 Ce qui donne :
+
 ![températures Mainsail](../Images/mainsail-températures.jpg)
 
 Si Obico a été installé :
+
 ![températures Obioc](../Images/obico-temperatures.jpg)
 
 **ATTENTION**
