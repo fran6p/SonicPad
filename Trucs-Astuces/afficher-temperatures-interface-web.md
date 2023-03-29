@@ -1,6 +1,6 @@
 Il est possible d'afficher les températures de la tablette et du microcontrôleur (MCU) de la carte de l'imprimante (uniquement pour des 
 cartes 32 bits équipées de à base de μcontrôleurs: ATSAM, ATSAMD, et STM32 
-=> voir [ici](https://www.klipper3d.org/fr/Config_Reference.html#capteur-de-temperature-integre-au-microcontroleur)
+=> voir [ici](https://www.klipper3d.org/fr/Config_Reference.html#capteur-de-temperature-integre-au-microcontroleur) )
 
 Ajouter dans le printer.cfg :
 ```
