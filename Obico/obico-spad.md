@@ -8,7 +8,7 @@ Afin d'installer Obico (ex Spaghetti Detective), il faut passer par le terminal 
 
 ~~Vous devrez obtenir un compte root pour effectuer ces étapes. Soyez prudent, car chaque fois que vous utilisez le root, il y a une chance que vous puissiez bloquer l'appareil, si vous ne pouvez pas le démarrer. Creality n'a pas fourni de processus pour flasher complètement l'appareil.~~
 
-Depuis [la mise à jour de février 2023 (v 1.0.6.43.51)](https://www.creality.com/blog/creality-sonic-pad-first-updated-on-february-root-access), Creality permet d'activer le root sur sa tablette en fournissant son mot de passe :smiley:. On peut donc suater l'étape 1 et passer directement à la 2 et sa suite.
+Depuis [la mise à jour de février 2023 (v 1.0.6.43.51)](https://www.creality.com/blog/creality-sonic-pad-first-updated-on-february-root-access), Creality permet d'activer le root sur sa tablette en fournissant son mot de passe :smiley:. On peut donc sauter l'étape 1 et passer directement à la 2 et sa suite.
 
 **Ce guide s'adresse aux personnes ayant une expérience préalable de Linux. Ne suivez ce guide que si vous êtes à l'aise avec l'édition de fichiers, la navigation dans les systèmes de fichiers Linux, et si vous pouvez faire votre propre dépannage. Bien que cela ait fonctionné pour moi, je ne peux pas garantir que cela fonctionnera pour vous. Veuillez vous assurer que vous êtes sur le même firmware avant de l'exécuter. Ce guide suppose que vous avez une imprimante 3D. Aucun test n'a été efectué sur un Pad relié à plusieurs imprimantes. Mon imprimante principale est une Ender 3 S1, donc je ne peux pas garantir que cela fonctionnera pour d'autres imprimantes.**
 
@@ -20,25 +20,34 @@ Depuis [la mise à jour de février 2023 (v 1.0.6.43.51)](https://www.creality.c
 Ce guide a été configuré pour le firmware du Sonic Pad "V1.0.6.35.154 02 Dec. 2022".
 
 MAJ 10/02/2023:
+- Obico fonctionne toujours avec la mise à jour de mars proposée par Creality , la v 1.0.6.46.25 (encore un vendredi, la veille d'un week-end :smirk:)
+- Creality a ajouté une fonction «similaire» à Obico mais qui passe par leur Cloud ☹️
+
+MAJ 10/02/2023:
 - Obico continue de fonctionner avec la mise à jour de février proposée par Creality (le vendredi 10/02/2023), la v 1.0.6.43.51 (la veille d'un week-end :smirk:)
+- L'étape (1) ci-dessous n'est plus nécessaire, Creality ayant diffusé le mot de passe root dans cette mise à jour ( commence par **cxsw…** )
 
 MAJ 29/01/2023:
 - Obico fonctionne encore avec la mise à jour de janvier proposée par Creality (juste avant le nouvel an chinois :smirk:), la v 1.0.6.43.38
 - La section concernant Procd (5) a été modifiée pour fonctionner avec cron (6). Plus besoin de délai pour démarrer Obico après Moonraker 
 
-On pourrait chercher à automatiser ceci dans un script. Pour le moment, il suffit de suivre les étapes les unes après les autres.
-Voici les étapes de haut niveau :
+La suite de commandes pourrait être automatisée en écrivant un script shell (ash). Pour le moment, il suffit de suivre les étapes les unes après les autres.
+Voici les étapes principales :
 
-1. SSH et obtenir root
+1. ~~SSH et obtenir l'accès root
 2. Télécharger et configurer Obico
 3. Installer les dépendances
 4. Lier l'imprimante au site Obico
 5. ~~Créer un service~~ 
 6. Exécuter au démarrage à l'aide de cron
+7. ou exécuter au démarrage via rc.local
 
 C'est parti !
 
-## 1. SSH et passer root
+## 1. SSH en root
+
+<details>
+  <summary>(Cliquez pour déplier!)</summary>
 
   ### 1.1 Se connecter sur le Sonic Pad
   
@@ -63,6 +72,8 @@ C'est parti !
   
   ```await self._execute_cmd("sed -i'.bkup' '/^root/croot::19277:0:99999:7:::' /etc/shadow")```
   
+  </details>
+  
  ### 1.3 Redémarer le Sonic Pad
 
   ### 1.4 SSH en utilisateur root
@@ -73,16 +84,19 @@ C'est parti !
 ## 2. Télécharger et configurer Obico
 
   ### 2.1 Téléchargez le client Obico sur github.
+  
   ```
   cd /usr/share
   git clone https://github.com/TheSpaghettiDetective/moonraker-obico.git
   ```
 
   ### 2.2 Créer moonraker-obico.cfg
+  
   ```
   cd moonraker-obico
   cp moonraker-obico.cfg.sample moonraker-obico.cfg
   ```
+  
   >Editer la configuration que vous avez copiée et modifier le chemin du journal en : `/mnt/UDISK/printer_logs/moonraker-obico.log`
   
   >Si vous utilisez une version locale d'obico, modifiez l'url du serveur.
@@ -92,6 +106,7 @@ C'est parti !
 ## 3. Installer les dépendances
 
   ### 3.1 Configuration de l'environnement virtuel de python pour éviter les collisions de versions
+  
   ```
      pip3 install virtualenv
      cd /usr/share/moonraker-obico
@@ -108,12 +123,13 @@ C'est parti !
 
   ### 3.2 Installer les modules requis du kit d'installation obico
   
- **Ignorez l'échec de la construction de psutil. Cela sera corrigé plus tard.**
+ **Ignorez l'échec de la construction de psutil. Une correction sera réalisée plus tard.**
  
  
  ```pip3 install --require-virtualenv -r requirements.txt```
 
-  Pour une raison quelconque, il y a encore des erreurs d'inclusion de module malgré ce qui précède, exécutez alors ce qui suit :
+  Si pour une raison quelconque, il y a encore des erreurs d'inclusion de modules malgré ce qui précède, exécutez alors ce qui suit :
+  
   ```
   pip3 install --require-virtualenv requests
   pip3 install --require-virtualenv backoff
@@ -154,6 +170,9 @@ C'est parti !
 
 
 ## 5. Créer un service
+
+<details>
+  <summary>(Cliquez pour déplier!)</summary>
 
   Maintenant que tout est fonctionnel, nous allons configurer Obico pour qu'il fonctionne comme un service système au démarrage (daemon).
 
@@ -196,9 +215,14 @@ C'est parti !
   update-rc.d moonraker_obico_service defaults
   ```
 
+  </details>
+  
 ## 6. Créer une tâche cron
 
 La méthode utilisant procd pour démarrer en tant que service fonctionne mais il faut qu'Obico attende que Moonraker soit complètement opérationnel avant de démarrer sinon il échoue et il faut alors le démarrer manuellement. On pourrait ajouter un délai (sleep) de 30 secondes pour s'assurer que cela se produise, mais cela retarderait le démarrage du service, une exécution en tant que tâche cron semble une meilleure solution.
+
+  <details>
+  <summary>(Cliquez pour déplier!)</summary>
 
 ## 6.1 Créer le script de démarrage
 
@@ -240,9 +264,19 @@ Redémarrer le Pad et vérifier que Obico démarre correctement. Utiliser `ps`po
 
 > `ps | grep obico`
 
-Pour le moment, chez moi. la tâche ne s'exécute pas au démarrage. **Le raccourci «@reboot» n'existe pas dans le Busybox d'OpenWRT**.
+Pour le moment, chez moi, la tâche ne s'exécute pas au démarrage. **Le raccourci «@reboot» n'existe pas dans le Busybox d'OpenWRT**.
+    
+**Solution alternative:** (via un thread Reddit)
+    
+Modifier le script pour qu'il s'exécute toutes les minutes, créer un fichier dans le répertoire /tmp si Obico a été démarré.
+    
+```
+* * * * * if [ -e "/tmp/cron-obico-start" ]; then echo "OK!"; else echo "START" >> /tmp/cron-obico-start && sleep 30s && /usr/share/moonraker-obico/obico-start; fi
+```    
 
-**SOLUTION:** :smiley:
+  </details>
+  
+**AUTRE SOLUTION:** :smiley:
 
 Ne pas lancer le script «obico-start.sh» via une tâche cron mais l'appeler dans rc.local (à placer avant la ligne «exit 0». Comme la tâche cron ne fonctionne pas, on peut évidemment la supprimer puisqu'elle ne sert plus à rien: `crontab -r`
 
