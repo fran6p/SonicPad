@@ -216,10 +216,12 @@ C'est parti !
   ```
 
   </details>
+
+La méthode utilisant procd pour démarrer en tant que service fonctionne mais il faut qu'Obico attende que Moonraker soit complètement opérationnel avant de démarrer sinon il échoue et il faut alors le démarrer manuellement. On pourrait ajouter un délai (sleep) de 30 secondes pour s'assurer que cela se produise, mais cela retarderait le démarrage du service.
   
 ## 6. Créer une tâche cron
 
-La méthode utilisant procd pour démarrer en tant que service fonctionne mais il faut qu'Obico attende que Moonraker soit complètement opérationnel avant de démarrer sinon il échoue et il faut alors le démarrer manuellement. On pourrait ajouter un délai (sleep) de 30 secondes pour s'assurer que cela se produise, mais cela retarderait le démarrage du service, une exécution en tant que tâche cron semble une meilleure solution.
+Exécuter le démarrage d'Obico en tant que tâche cron semble une meilleure solution.
 
   <details>
   <summary>(Cliquez pour déplier!)</summary>
@@ -264,7 +266,7 @@ Redémarrer le Pad et vérifier que Obico démarre correctement. Utiliser `ps`po
 
 > `ps | grep obico`
 
-Pour le moment, chez moi, la tâche ne s'exécute pas au démarrage. **Le raccourci «@reboot» n'existe pas dans le Busybox d'OpenWRT**.
+    Pour le moment, chez moi, la tâche ne s'exécute pas au démarrage. **Le raccourci «@reboot» n'existe pas dans le Busybox d'OpenWRT**.
     
 **Solution alternative:** (via un thread Reddit)
     
@@ -276,7 +278,7 @@ Modifier le script pour qu'il s'exécute toutes les minutes, créer un fichier d
 
   </details>
   
-**AUTRE SOLUTION:** :smiley:
+## 7 Démarrer via rc.local :smiley:
 
 Ne pas lancer le script «obico-start.sh» via une tâche cron mais l'appeler dans rc.local (à placer avant la ligne «exit 0». Comme la tâche cron ne fonctionne pas, on peut évidemment la supprimer puisqu'elle ne sert plus à rien: `crontab -r`
 
