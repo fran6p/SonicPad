@@ -79,7 +79,7 @@ C'est parti !
   ### 1.4 SSH en utilisateur root
   
   ```ssh root@<adresse-ip/nom-hôte>```
-  >Mot de passe: creality ou vide ou celui choisi via passwd
+  >Mot de passe: ~~creality ou vide ou celui choisi via passwd~~ celui fourni par Creality (cxsw…)
 
 ## 2. Télécharger et configurer Obico
 
