@@ -6,9 +6,9 @@ Ce doit être certes possible mais franchement pas simple. Le processus de boot 
 
 Contrairement aux appareils x86, les appareils ARM ne sont généralement pas dotés d'un BIOS. Le BIOS des PC x86 est généralement un micrologiciel qui configure et connecte le matériel au système d'exploitation et qui prend en charge un grand nombre de systèmes d'exploitation ainsi que leurs nouvelles versions.
 
-Les ARM utilisent une approche différente impliquant un chargeur d'amorçage pour la configuration du matériel et le démarrage du système d'exploitation. Le chargeur de démarrage est développé spécifiquement pour l'application, adapté à une configuration matérielle bien définie du SOC, à un système d'exploitation et à une seule version de celui-ci, ce qui signifie qu'on ne peut probablement pas l'utiliser pour d'autres SOC sans changements significatifs.
+Les ARM utilisent une approche différente impliquant un chargeur d'amorçage pour la configuration du matériel et le démarrage du système d'exploitation. **Le chargeur de démarrage est développé spécifiquement pour l'application, adapté à une configuration matérielle bien définie du SOC, à un système d'exploitation et à une seule version de celui-ci**, ce qui signifie qu'on ne peut probablement pas l'utiliser pour d'autres SOC sans changements significatifs.
 
-Un système d'exploitation Linux ne peut pas être démarré comme cela sur un dispositif ARM, sans une petite quantité de code spécifique à la machine pour initialiser ce système.
+Un système d'exploitation Linux ne peut pas être démarré comme cela sur un dispositif ARM, sans une petite quantité de ***code spécifique à la machine*** pour initialiser ce système.
 
 Le processus d'amorçage d'un dispositif ARM comporte généralement 4 étapes
 
@@ -29,10 +29,10 @@ La tablette Creality ne possède pas de lecteur de carte SD, il faudrait procéd
 
 # Pour quel bénéfice?
 
-On peut se faire un équivalent au niveau matériel à partir d'écrans / SBC pour lesquels la procédure d'installation d'un système Linux puis l'installation de git et clonâge du dépôt Kiauh afin de compléter les installations (Klipper, Moonraker, Fluidd / Mainsail) est plus aisée. La contrepartie est que l'on aura pas l'interface graphique développée par Creality (Qt + navigateur) mais que l'on pourra remplacer par Klipperscreen.
+On peut se fabriquer un équivalent de cette tablette matériellement à partir d'écrans / SBC pour lesquels la procédure d'installation d'un système Linux puis installation de git et clonâge du dépôt Kiauh afin de compléter les installations (Klipper, Moonraker, Fluidd / Mainsail) est plus aisée. La contrepartie est que l'on aura pas l'interface graphique développée par Creality (Qt + navigateur), plutôt bien réalisée d'ailleurs, mais que l'on pourra remplacer par Klipperscreen (Open source, pour lequel on bénéficiera d'aide en cas de problèmes ou de modifications).
 
-Depuis la mise à jour de mars 2023, Creality propose une procédure permettant de réinstaller son système sur [ce github](https://github.com/CrealityOfficial/Creality_Sonic_Pad_Firmware)
+Depuis la mise à jour de mars 2023, Creality propose une procédure permettant de réinstaller le système comme «sortie d'usine». Plus d'informations sur [ce github](https://github.com/CrealityOfficial/Creality_Sonic_Pad_Firmware)
 
-L'intérêt de la procédure de réinstallation est de «décrire» la manière de flasher une image système (différent des mises à jour via OTA ou une clé USB) en utilisant un des outils Sunxi (Phoenix suite), en passant la tablette en mode FEL quand elle reliée via un câble USB à un ordinateur.
+L'intérêt de cette procédure de réinstallation est de «décrire» la manière de flasher une image système (différent des mises à jour via OTA ou une clé USB) en utilisant un des outils Sunxi (Phoenix suite), en passant la tablette en mode FEL quand elle reliée via un câble USB à un ordinateur.
 
 …
