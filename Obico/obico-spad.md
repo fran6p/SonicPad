@@ -273,7 +273,7 @@ Redémarrer le Pad et vérifier que Obico démarre correctement. Utiliser `ps`po
 Modifier le script pour qu'il s'exécute toutes les minutes, créer un fichier dans le répertoire /tmp si Obico a été démarré.
     
 ```
-* * * * * if [ -e "/tmp/cron-obico-start" ]; then echo "OK!"; else echo "START" >> /tmp/cron-obico-start && sleep 30s && /usr/share/moonraker-obico/obico-start; fi
+* * * * * if [ -e "/tmp/cron-obico-start" ]; then echo "OK!"; else echo "START" >> /tmp/cron-obico-start && sleep 30s && /usr/share/moonraker-obico/obico-start.sh; fi
 ```    
 
   </details>
