@@ -253,6 +253,7 @@ Section: base
 Architecture: sunxi
 Installed-Size: 38255908
 Description:  avr-gcc toolchain run on aarch64 TinaLinux.
+
 root@spad-1168:/usr/lib/opkg/info# cat gcc-arm-none-eabi.control
 Package: gcc-arm-none-eabi
 Version: 6-2022-q4-major-1
