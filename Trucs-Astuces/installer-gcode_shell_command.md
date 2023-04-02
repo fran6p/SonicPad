@@ -137,7 +137,7 @@ DIR_CONF="/mnt/UDISK/printer_config"
 
 cp $CSV_FILE $DIR_CONF
 ```
-Il suffit de créer une macro Gcode et son pendant shell_comand pour pouvoir effectuer la sauvegarde directement via le terminal de Klipper :
+Il suffit de créer une macro Gcode et son pendant shell_command pour pouvoir effectuer la sauvegarde directement via le terminal de Klipper :
 ```
 [gcode_macro BACKUP_CSV]
 description: Backup csv files registered in /tmp directory emptied on poweroff
