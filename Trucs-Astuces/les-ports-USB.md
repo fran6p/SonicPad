@@ -12,4 +12,4 @@ De la forme:
 
 Les autres sont de la forme:
 
-`/dev/serial/by-id/usb_serial_<numero>` pour le port USB*<numero>*, avec **numero={1,2,3,4}**
+`/dev/serial/by-id/usb_serial_<numero>` pour le port USB<*numero*>, avec **numero={1,2,3,4}**
