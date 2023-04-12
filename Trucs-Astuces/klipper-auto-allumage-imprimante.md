@@ -29,9 +29,9 @@ ou
 ou encore, redémarrer le Sonic Pad
 
 
-### NOTE:
+### NOTE
 
-L'idVendor (1a86) et l'idProduct(7523) correspondent aux ID xxxx:yyyy retournées par la commande `lsusb` pour le port USB où est connectée l'imprimante :
+L'idVendor (1a86) et l'idProduct(7523) correspondent aux ID xxxx:yyyy retournées par la commande `lsusb` pour le port USB où est connectée l'imprimante, elles dépendent fortement de la carte contrôleur qui implémente la connexion USB (là ça correspond à bon nombre d'imprimantes Creality utilisant le pilote CH341) :
 
 >  ```
 >  $ lsusb
