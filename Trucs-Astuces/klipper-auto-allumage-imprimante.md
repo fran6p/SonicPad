@@ -25,7 +25,7 @@ ou
 `udevadm control --reload-rules`
 ou encore, redémarrer le Sonic Pad
 
->  L'idVendor (1a86) et l'idProduct(7523) correspondent aux ID xxxx:yyyy retournées par la commande ̀`lsusb` :
+>  L'idVendor (1a86) et l'idProduct(7523) correspondent aux ID xxxx:yyyy retournées par la commande `lsusb` :
 >  ```
 >  $ lsusb
 >  Bus 001 Device 013: ID **1a86:7523 QinHeng Electronics CH340 serial converter**
