@@ -28,7 +28,7 @@ ou encore, redémarrer le Sonic Pad
 >  L'idVendor (1a86) et l'idProduct(7523) correspondent aux ID xxxx:yyyy retournées par la commande ̀`lsusb` :
 >  ```
 >  $ lsusb
->  Bus 001 Device 013: ID `1a86:7523` `QinHeng Electronics CH340 serial converter`
+>  Bus 001 Device 013: ID **1a86:7523 QinHeng Electronics CH340 serial converter**
 >  Bus 001 Device 004: ID 1bcf:2285 Sunplus Innovation Technology Inc. papalook FHD Camera
 >  Bus 001 Device 003: ID 0bda:8179 Realtek Semiconductor Corp. RTL8188EUS 802.11n Wireless Network Adapter
 >  Bus 001 Device 002: ID 1a40:0101 Terminus Technology Inc. Hub
