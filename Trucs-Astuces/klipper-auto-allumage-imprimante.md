@@ -16,16 +16,23 @@ Créer une régle UDEV `/etc/udev/rules.d/98-klipper.rules` avec le contenu:
 SUBSYSTEM=="usb", ATTRS{idVendor}=="1a86", ATTRS{idProduct}=="7523", ACTION=="add", RUN+="/bin/sh -c 'echo RESTART > /tmp/printer'"
 ```
 
-puis modifier les droits (exécution) de cette règle et mettre à jour la base UDEV :
+puis modifier les droits (exécution) de cette règle (pas craiment nécessaire) et mettre à jour la base UDEV :
 
 `chmod +x /etc/udev/rules.d/98-klipper.rules`
+
 puis
 `udevadm control --reload`
+
 ou
 `udevadm control --reload-rules`
+
 ou encore, redémarrer le Sonic Pad
 
->  L'idVendor (1a86) et l'idProduct(7523) correspondent aux ID xxxx:yyyy retournées par la commande `lsusb` :
+
+### NOTE:
+
+L'idVendor (1a86) et l'idProduct(7523) correspondent aux ID xxxx:yyyy retournées par la commande `lsusb` pour le port USB où est connectée l'imprimante :
+
 >  ```
 >  $ lsusb
 >  Bus 001 Device 013: ID **1a86:7523 QinHeng Electronics CH340 serial converter**
