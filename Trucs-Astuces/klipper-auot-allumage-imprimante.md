@@ -8,7 +8,7 @@ Procrastinateur né, vous trouvez trop fatiguant de devoir appuyer sur 'Redémar
 
 Suivre ce qui suit pour que klipper redémarre automatiquement lorsque l'imprimante est rallumée.
 
-**[Besoin d'un accès root]**
+**[RAPPEL] manipulations à réaliser en tant qu'utilisateur «root»**
 
 Créer une régle UDEV `/etc/udev/rules.d/98-klipper.rules` avec le contenu:
 
