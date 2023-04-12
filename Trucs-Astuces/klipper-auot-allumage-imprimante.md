@@ -1,10 +1,10 @@
-## Redémarrer Klipper à l'allumage de l'imprimante
+## Démarrer / redémarrer Klipper à l'allumage de l'imprimante
 
 L'imprimante a été éteinte mais le Sonic Pad est resté allumé.
 
-Vous trouvez qu'il est trop fatiguant de devoir appuyer sur 'Redémarrer Klipper' à chaque allumage de l'imprimante ?
+Procrastinateur né, vous trouvez trop fatiguant de devoir appuyer sur 'Redémarrer Klipper' à chaque allumage de l'imprimante ?
 
-Un accès root est obligatoire pour pouvoir réaliser cette manipulation.
+>  Un accès root est obligatoire pour pouvoir réaliser cette manipulation.
 
 Suivre ce qui suit pour que klipper redémarre automatiquement lorsque l'imprimante est rallumée.
 
@@ -24,4 +24,4 @@ udevadm control --reload (ou redémarrer le Sonic Pad)
 ```
 
 Sources:
-- https://github.com/Klipper3d/klipper/issues/835
+- [Github Klipper](https://github.com/Klipper3d/klipper/issues/835)
