@@ -16,14 +16,14 @@ Créer une régle UDEV `/etc/udev/rules.d/98-klipper.rules` avec le contenu:
 SUBSYSTEM=="usb", ATTRS{idVendor}=="1a86", ATTRS{idProduct}=="7523", ACTION=="add", RUN+="/bin/sh -c 'echo RESTART > /tmp/printer'"
 ```
 
-puis modifier les droits (exécution) de cette règle (pas craiment nécessaire) et mettre à jour la base UDEV :
+modifier les droits (exécution) de cette règle (*pas vraiment nécessaire*) :
 
 `chmod +x /etc/udev/rules.d/98-klipper.rules`
 
-puis
+mettre à jour la base UDEV : 
 `udevadm control --reload`
 
-ou
+ou 
 `udevadm control --reload-rules`
 
 ou encore, redémarrer le Sonic Pad
