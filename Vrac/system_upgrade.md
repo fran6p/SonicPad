@@ -16,6 +16,7 @@ start(){
     $PROG_PROGRESS -w > /dev/console 2>&1 &
     $PROG
 }
+```
 
 Le script `/sbin/swupdate_cmd.sh`
 
