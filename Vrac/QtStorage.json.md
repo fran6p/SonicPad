@@ -11,6 +11,6 @@ A la racine du répertoire `/mnt/UDISK` on trouve un fichier `QtStorage.json`. S
 }
 ```
 
-La "variable" booléenne `isFirst-Boot` ne passe à `false` qu'une fois les étapes de première installation faites. Au premier allumage après déballage du SonicPad, elle est positionnée à `true`
+La "variable" booléenne `isFirstBoot` ne passe à `false` qu'une fois les étapes de première installation faites. Au premier allumage après déballage du SonicPad, elle est positionnée à `true`
 
 :smiley:
