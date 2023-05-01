@@ -143,7 +143,9 @@ drwxr-xr-x    1 root     root          1024 Feb 17 14:34 ..
 -rwxr-x--x    1 root     root          7218 Apr 26 11:14 watchdog.py
 ```
 
-Le fichier `system_upgrade_command.yaml` contient les directives :
+Le fichier `system_upgrade_command.yaml` contient les informations permettant la mise à jour dont l'adresse du firmware :smirk:. Exemple 
+avec la mise à jour d'avril 2023 :
+
 ```
 
 create_time: '0001-01-01T00:00:00Z'
