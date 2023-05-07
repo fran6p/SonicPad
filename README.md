@@ -1,5 +1,7 @@
 # SonicPad
+
 ---
+| boot | loading |
 |:-------------------------:|:-------------------------:|
 | ![Boot](./Images/boot.gif) | ![Chargement…](./Images/loading.gif) |
 ---
