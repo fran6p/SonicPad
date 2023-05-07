@@ -1,4 +1,4 @@
-## Liste des paquets installés (ou pas ( -1 ))
+## Liste des paquets installés (ou pas ( :smirk: ))
 
 <details>
   
