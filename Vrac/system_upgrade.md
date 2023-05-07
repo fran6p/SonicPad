@@ -144,7 +144,7 @@ drwxr-xr-x    1 root     root          1024 Feb 17 14:34 ..
 ```
 
 Le fichier `system_upgrade_command.yaml` contient les informations permettant la mise à jour dont l'adresse du firmware
-à récupérer pour réaliser cette opération (**download:** et, redondant **download_url:** ***A NOTER:*** http pas http**s** :smirk:. 
+à récupérer pour réaliser cette opération (**download:** et, redondant **download_url:** ***A NOTER:*** http pas http**s**) :smirk:. 
 
 Exemple avec la mise à jour d'avril 2023 :
 
