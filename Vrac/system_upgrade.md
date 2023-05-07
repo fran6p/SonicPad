@@ -195,8 +195,8 @@ version_no: V1.0.6.48.57
 version_zh: "1.修复了一些已知问题\r\n2.更新了若干功能"
 ```
 
-Les modifications, ajouts, corrections sont succinctement listées. Elles apparaitront dans la fenêtre sur le SonicPad, pour prendre
-connaissance de la totalité, il faudra faire défiler le contenu.
+Les modifications, ajouts, corrections sont succinctement listés. Ces informations apparaitront dans la fenêtre signalant une mise à jour sur le SonicPad, pour prendre connaissance de la totalité, il faudra faire défiler le contenu.
+
 ```
 1 Add pre-configuration support for Ender-2 pro & CR-M4 & Flsun SR/Q5
 2 Added laser engraving function for Ender-3 S1 & Ender-3 S1 Pro
