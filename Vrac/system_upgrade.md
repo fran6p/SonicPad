@@ -201,7 +201,7 @@ connaissance de la totalité, il faudra faire défiler le contenu.
 1 Add pre-configuration support for Ender-2 pro & CR-M4 & Flsun SR/Q5
 2 Added laser engraving function for Ender-3 S1 & Ender-3 S1 Pro
 3 Add serial port control connection mode for some pre-configured models;
-4 Add the function of customer service real-time online communication\
+4 Add the function of customer service real-time online communication
 5 Added support for USB peripherals (mouse/keyboard)
 6 Modify the net bed points directly on the PAD UI
 7 The extruder can be directly set as MK8 or Sprite extruder
@@ -217,4 +217,25 @@ connaissance de la totalité, il faudra faire défiler le contenu.
 11 Optimize the adaptation logic of vibration compensation, the pre-configuration creality model will automatically select the type of vibration compensation
 12 Optimize configuration file saving logic, automatic leveling and other operations can be saved without restarting
 13 Optimize the UI interaction experience and fix other known bugs
+
+En bon gaulois: 
+1 Ajout de la prise en charge de la préconfiguration pour Ender-2 pro & CR-M4 & Flsun SR/Q5
+2 Ajout d'une fonction de gravure laser pour Ender-3 S1 & Ender-3 S1 Pro
+3 Ajout d'un mode de connexion de contrôle par port série pour certains modèles préconfigurés ;
+4 Ajout de la fonction de communication en ligne en temps réel du service clientèle
+5 Ajout de la prise en charge des périphériques USB (souris/clavier)
+6 Modifier les points de maillage du lit directement sur l'interface utilisateur du PAD
+7 L'extrudeuse peut être directement réglée comme extrudeuse MK8 ou Sprite
+8 Ajout d'une fonction de clonage de modèle pour le découpage en ligne
+9 Ajout d'une fonction de réglage de la résolution de la caméra 1080P
+10 Lancement de la fonction de contrôle Creality cloud APP, prenant en charge 6 modèles :
+     - Ender-3 S1
+     - Ender-3 V2
+     - Ender-3 S1 Pro
+     - CR-10 SMART PRO
+     - Ender-6
+     - Ender-5 S1
+11 Optimiser la logique d'adaptation de la compensation de résonance, le modèle Creality de préconfiguration sélectionnera automatiquement le type de compensation de résonance.
+12 Optimiser la logique d'enregistrement du fichier de configuration, le nivellement automatique et d'autres opérations peuvent être enregistrés sans redémarrage.
+13 Optimisation de l'expérience d'interaction avec l'interface utilisateur et correction d'autres bogues connus.
 ```
