@@ -8,4 +8,4 @@
 
 ---
 
-<p style="text-align:center">:bulb: Trucs, astuces, réflexions à propos de cette tablette Klipper vendue par Creality</p> 
+:bulb: Trucs, astuces, réflexions à propos de cette tablette Klipper vendue par Creality
