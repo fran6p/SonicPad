@@ -214,8 +214,10 @@ connaissance de la totalité, il faudra faire défiler le contenu.
      - CR-10 SMART PRO
      - Ender-6
      - Ender-5 S1
-11 Optimize the adaptation logic of vibration compensation, the pre-configuration creality model will automatically select the type of vibration compensation
-12 Optimize configuration file saving logic, automatic leveling and other operations can be saved without restarting
+11 Optimize the adaptation logic of vibration compensation, the pre-configuration creality model will
+automatically select the type of vibration compensation
+12 Optimize configuration file saving logic, automatic leveling and other operations can be saved
+without restarting
 13 Optimize the UI interaction experience and fix other known bugs
 
 En bon gaulois: 
@@ -235,7 +237,9 @@ En bon gaulois:
      - CR-10 SMART PRO
      - Ender-6
      - Ender-5 S1
-11 Optimiser la logique d'adaptation de la compensation de résonance, le modèle Creality de préconfiguration sélectionnera automatiquement le type de compensation de résonance.
-12 Optimiser la logique d'enregistrement du fichier de configuration, le nivellement automatique et d'autres opérations peuvent être enregistrés sans redémarrage.
+11 Optimiser la logique d'adaptation de la compensation de résonance, le modèle Creality de
+préconfiguration sélectionnera automatiquement le type de compensation de résonance.
+12 Optimiser la logique d'enregistrement du fichier de configuration, le nivellement automatique
+et d'autres opérations peuvent être enregistrés sans redémarrage.
 13 Optimisation de l'expérience d'interaction avec l'interface utilisateur et correction d'autres bogues connus.
 ```
