@@ -19,7 +19,7 @@ Depuis [la mise à jour de février 2023 (v 1.0.6.43.51)](https://www.creality.c
 
 Ce guide a été configuré pour le firmware du Sonic Pad "V1.0.6.35.154 02 Dec. 2022".
 
-MAJ 10/02/2023:
+MAJ 10/03/2023:
 - Obico fonctionne toujours avec la mise à jour de mars proposée par Creality , la v 1.0.6.46.25 (encore un vendredi, la veille d'un week-end :smirk:)
 - Creality a ajouté une fonction «similaire» à Obico mais qui passe par leur Cloud ☹️
 
