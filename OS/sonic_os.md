@@ -29,8 +29,7 @@ sudo apt install git gcc gawk flex libc6:i386 libstdc++6:i386 lib32z1 libncurses
     cd dl
     wget -i sonic_pad_os_dl.txt
     ```
-    
-    Le fichier [sonic_pad_os_dl.txt](https://raw.githubusercontent.com/fran6p/SonicPad/main/Fichiers/sonic_pad_os_dl.txt) contient les quarante et un (41) fichiers sources à télécharger ( ≃ 1,5 Go)
+    *Le fichier [sonic_pad_os_dl.txt](https://raw.githubusercontent.com/fran6p/SonicPad/main/Fichiers/sonic_pad_os_dl.txt) contient la liste des quarante et un (41) fichiers sources à télécharger ( ≃ 1,5 Go)*
 3. Entrer dans le répertoire racine de sonic_pad_os et exécuter le script «prepare.sh» du répertoire «script/»  :
     ```
     cd ~/sonic_pad_os
