@@ -48,9 +48,11 @@ sudo apt install git gcc gawk flex libc6:i386 libstdc++6:i386 lib32z1 libncurses
      ```
 5. Une fois la compilation terminée (sans échec évidemment :smirk:) :
     1. Flashage via une clé USB :
+    
     Copiez les fichiers config.ini et t800-sonic_lcd-ab_1.0.6.48.57.swu du répertoire sonic_pad_os/out/r818-sonic_lcd/ dans le répertoire racine de la clé USB.
     Le numéro de version du micrologiciel doit être supérieur au numéro de version actuel de l'appareil, sinon la fenêtre de mise à niveau ne s'affichera pas.
     2. Flashage via mise à jour à partir d'un ordinateur relié en USB au SonicPad et le programme Phoenix Suite :
+    
     Le chemin de l'image générée après la compilation est sonic_pad_os/out/r818-sonic_lcd/t800-sonic_lcd_uart0.img.
     Se référer au lien pour l'outil de flashage et la méthode de mise à jour indiquée [ici](https://github.com/CrealityOfficial/Creality_Sonic_Pad_Firmware)
 
