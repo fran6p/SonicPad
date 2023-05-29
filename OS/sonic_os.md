@@ -17,6 +17,7 @@ Installer les dépendances nécessaires :
 sudo apt update && sudo apt upgrade
 sudo apt install git gcc gawk flex libc6:i386 libstdc++6:i386 lib32z1 libncurses5 libncurses5-dev python g++ libz-dev libssl-dev make p7zip-full
 ```
+*Avec une version autre de Ubuntu (20.04, 22.04), les paquets `libc6:i386`et `libstdc++6:i386` ne sont pas trouvés*
 
 ## Compiler
 
