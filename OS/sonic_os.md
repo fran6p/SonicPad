@@ -2,7 +2,7 @@
 
 Creality a mis en ligne les sources de son système d'exploitation.
 
-Ce [dépôt Github](https://github.com/CrealityTech/sonic_pad_os) contient normalement tout le nécessaire pour compiler une version identique de l'OS Creality basé sur Tina Linux, fork d'OpenWRT pour des microcontrôleurs Allwinner.
+Ce [dépôt Github](https://github.com/CrealityTech/sonic_pad_os) contient normalement tout le nécessaire pour compiler une version de l'OS identique à celle fournie par Creality basé sur Tina Linux, fork d'OpenWRT pour des microcontrôleurs Allwinner.
 
 La première fois que j'ai tenté de récupérer les fichiers de [ce lien](https://klipper.cxswyjy.com/download/sonic_dl/) la connexion n'aboutissait pas (timeout), un échange avec celui gérant le projet (@luo52) via Discord a permis de tout remttre en ordre. Le lien est, à ce jour, 29 mai 2023, fonctionnel. Sans ces sources complémentaires, la compilation se terminait par un échec (à l'issue du `make -j2`).
 
