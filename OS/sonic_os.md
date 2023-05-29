@@ -18,6 +18,8 @@ sudo apt update && sudo apt upgrade
 sudo apt install git gcc gawk flex libc6:i386 libstdc++6:i386 lib32z1 libncurses5 libncurses5-dev python g++ libz-dev libssl-dev make p7zip-full
 ```
 
+## Compiler
+
 1. Télécharger le dépôt : 
     `git clone https://github.com/CrealityTech/sonic_pad_os.git`
 2. Téléchargez les paquets complémentaires de sources, les sauvegarder dans un réperoire «dl» (sonic_pad_os/dl) :
