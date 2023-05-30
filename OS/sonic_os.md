@@ -17,7 +17,23 @@ Installer les dépendances nécessaires :
 sudo apt update && sudo apt upgrade
 sudo apt install git gcc gawk flex libc6:i386 libstdc++6:i386 lib32z1 libncurses5 libncurses5-dev python g++ libz-dev libssl-dev make p7zip-full
 ```
-*Avec une version autre de Ubuntu (20.04, 22.04), les paquets `libc6:i386`et `libstdc++6:i386` ne sont pas trouvés*
+*Avec les versions de Ubuntu (18.04.06, 20.04, 22.04), les paquets `libc6:i386`et `libstdc++6:i386` ne sont pas trouvés* :
+    
+    ```
+    francis@ARRAKIS-DUNE:~$ sudo apt install libc6:i386 libstdc++6:i386
+    Reading package lists... Done
+    Building dependency tree
+    Reading state information... Done
+    Package libc6:i386 is not available, but is referred to by another package.
+    This may mean that the package is missing, has been obsoleted, or
+    is only available from another source
+    However the following packages replace it:
+      libdb1-compat tzdata
+      
+    E: Package 'libc6:i386' has no installation candidate
+    E: Unable to locate package libstdc++6:i386
+    E: Couldn't find any package by regex 'libstdc++6'
+    ```
 
 ## Compiler
 
