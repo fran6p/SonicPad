@@ -35,6 +35,40 @@ sudo apt install git gcc gawk flex libc6:i386 libstdc++6:i386 lib32z1 libncurses
     E: Couldn't find any package by regex 'libstdc++6'
     ```
 
+Pour résoudre ce problème d'installation de ces paquets pour une architecture «i386», :
+```
+sudo dpkg --add-architecture i386
+sudo apt update
+sudo apt install libc6:i386 libstdc++6:i386
+```
+Maintenant, ces paquets sont bien installés :
+```
+francis@ARRAKIS-DUNE:~$ apt-cache policy libc6 libc6:i386
+libc6:
+  Installed: 2.27-3ubuntu1.6
+  Candidate: 2.27-3ubuntu1.6
+  Version table:
+ *** 2.27-3ubuntu1.6 500
+        500 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 Packages
+        100 /var/lib/dpkg/status
+     2.27-3ubuntu1.5 500
+        500 http://security.ubuntu.com/ubuntu bionic-security/main amd64 Packages
+     2.27-3ubuntu1 500
+        500 http://archive.ubuntu.com/ubuntu bionic/main amd64 Packages
+libc6:i386:
+  Installed: 2.27-3ubuntu1.6
+  Candidate: 2.27-3ubuntu1.6
+  Version table:
+ *** 2.27-3ubuntu1.6 500
+        500 http://archive.ubuntu.com/ubuntu bionic-updates/main i386 Packages
+        100 /var/lib/dpkg/status
+     2.27-3ubuntu1.5 500
+        500 http://security.ubuntu.com/ubuntu bionic-security/main i386 Packages
+     2.27-3ubuntu1 500
+        500 http://archive.ubuntu.com/ubuntu bionic/main i386 Packages
+francis@ARRAKIS-DUNE:~$
+```
+
 ## Compiler
 
 1. Télécharger le dépôt : 
