@@ -116,7 +116,7 @@ francis@ARRAKIS-DUNE:~$
 
 ### Concernant la compilation
 
-Le `make -j2` bien que »rapide» lors d'une erreur de compilation n'est pas du tout explicite quant à cette erreur 🙃. Il faut
-relancer la compilation via `make -j1` ou `make`, le processus est alors beaucoup, beacoup plus lent mais en cas d'erreur,
-cette fois-ci, c'est clairement écrit.
+Le `make -j2` bien que «rapide» à compiler, lors d'une erreur, ce n'est pas du tout explicite quant à cette erreur 🙃. Il faut
+relancer la compilation via `make -j1` ou simplement  `make`, le processus est alors beaucoup, beaucoup plus lent mais en cas d'erreur,
+cette fois-ci, l'erreur est clairement décrite.
 
