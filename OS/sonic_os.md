@@ -111,3 +111,12 @@ francis@ARRAKIS-DUNE:~$
     Le chemin de l'image générée après la compilation est **sonic_pad_os/out/r818-sonic_lcd/t800-sonic_lcd_uart0.img**.
     
     Se référer au lien pour l'outil de flashage et la méthode de mise à jour indiquée **[ici](https://github.com/CrealityOfficial/Creality_Sonic_Pad_Firmware)**
+
+## NOTES
+
+### Concernant la compilation
+
+Le `make -j2` bien que »rapide» lors d'une erreur de compilation n'est pas du tout explicite quant à cette erreur 🙃. Il faut
+relancer la compilation via `make -j1` ou `make`, le processus est alors beaucoup, beacoup plus lent mais en cas d'erreur,
+cette fois-ci, c'est clairement écrit.
+
