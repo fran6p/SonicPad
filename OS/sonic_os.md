@@ -95,7 +95,7 @@ francis@ARRAKIS-DUNE:~$
  4. Etapes de la compilation ( 4 étapes) :
      ```
      source build/envsetup.sh
-     lunch    ; choisir dans la liste d'options, l'option 6 
+     lunch 6   ; ou lunch puis choix de l'option 6 dans la liste d'options proposées,  
      make -j2 && pack
      swupdate_pack_swu -ab
      ```
