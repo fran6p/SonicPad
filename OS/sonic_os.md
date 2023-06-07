@@ -544,6 +544,27 @@ Le contenu du répertoire sonic_pad_os/dl :
      make -j2 && pack
      swupdate_pack_swu -ab
      ```
+     
+     ```
+     francis@ARRAKIS-DUNE:~/sonic_pad_os$ source build/envsetup.sh
+     Setup env done! Please run lunch next.
+     francis@ARRAKIS-DUNE:~/sonic_pad_os$ lunch 6
+     ============================================
+     TINA_BUILD_TOP=/home/francis/sonic_pad_os
+     TINA_TARGET_ARCH=aarch64
+     TARGET_PRODUCT=r818_sonic_lcd
+     TARGET_PLATFORM=r818
+     TARGET_BOARD=r818-sonic_lcd
+     TARGET_PLAN=sonic_lcd
+     TARGET_BUILD_VARIANT=tina
+     TARGET_BUILD_TYPE=release
+     TARGET_KERNEL_VERSION=4.9
+     TARGET_UBOOT=u-boot-2018
+     TARGET_CHIP=sun50iw10p1
+     ============================================
+     francis@ARRAKIS-DUNE:~/sonic_pad_os$
+     ```
+     
 5. Une fois la compilation terminée (sans échec évidemment :smirk:) :
     - Flashage via une clé USB :
     
