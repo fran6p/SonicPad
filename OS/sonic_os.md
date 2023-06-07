@@ -520,7 +520,7 @@ francis@ARRAKIS-DUNE:~/sonic_pad_os/dl$
     
 Le contenu du répertoire sonic_pad_os/dl :
     
-    ![listing](https://github.com/fran6p/SonicPad/blob/main/Images/sonic_os_dl-listing.jpg)
+![listing](https://github.com/fran6p/SonicPad/blob/main/Images/sonic_os_dl-listing.jpg)
     
 3. Entrer dans le répertoire racine de sonic_pad_os et exécuter le script «prepare.sh» du répertoire «script/»  :
     ```
