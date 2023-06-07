@@ -96,8 +96,6 @@ francis@ARRAKIS-DUNE:~$
     
 <details>
   <summary>(Cliquez pour agrandir!)</summary>
-    
-francis@ARRAKIS-DUNE:~/sonic_pad_os$ cd dl
 francis@ARRAKIS-DUNE:~/sonic_pad_os/dl$ wget -i ../../sonic_pad_os_dl.txt
 --2023-06-07 18:26:06--  https://klipper.cxswyjy.com/download/sonic_dl/Cython-0.29.2.tar.gz
 Resolving klipper.cxswyjy.com (klipper.cxswyjy.com)... 184.104.219.54
