@@ -93,10 +93,10 @@ francis@ARRAKIS-DUNE:~$
     wget https://raw.githubusercontent.com/fran6p/SonicPad/main/Fichiers/sonic_pad_os_dl.txt
     wget -i sonic_pad_os_dl.txt
     ```
+    
 <details>
   <summary>(Cliquez pour agrandir!)</summary>
     
-    ```
 francis@ARRAKIS-DUNE:~/sonic_pad_os$ cd dl
 francis@ARRAKIS-DUNE:~/sonic_pad_os/dl$ wget -i ../../sonic_pad_os_dl.txt
 --2023-06-07 18:26:06--  https://klipper.cxswyjy.com/download/sonic_dl/Cython-0.29.2.tar.gz
@@ -513,13 +513,12 @@ x264.zip                      100%[=============================================
 FINISHED --2023-06-07 18:33:10--
 Total wall clock time: 7m 4s
 Downloaded: 41 files, 1.4G in 6m 49s (3.40 MB/s)
-francis@ARRAKIS-DUNE:~/sonic_pad_os/dl$  
-    ```    
+francis@ARRAKIS-DUNE:~/sonic_pad_os/dl$    
 </details>
 
-    *Le fichier [sonic_pad_os_dl.txt](https://raw.githubusercontent.com/fran6p/SonicPad/main/Fichiers/sonic_pad_os_dl.txt) contient la liste des quarante et un (41) fichiers sources à télécharger ( ≃ 1,5 Go)* :smiley:
+*Le fichier [sonic_pad_os_dl.txt](https://raw.githubusercontent.com/fran6p/SonicPad/main/Fichiers/sonic_pad_os_dl.txt) contient la liste des quarante et un (41) fichiers sources à télécharger ( ≃ 1,5 Go)* :smiley:
     
-    Le contenu du répertoire sonic_pad_os/dl :
+Le contenu du répertoire sonic_pad_os/dl :
     
     ![listing](https://github.com/fran6p/SonicPad/blob/main/Images/sonic_os_dl-listing.jpg)
     
