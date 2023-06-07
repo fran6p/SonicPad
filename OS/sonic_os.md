@@ -525,6 +525,18 @@ Le contenu du répertoire sonic_pad_os/dl :
     cd ~/sonic_pad_os
     ./scripts/prepare.sh
     ```
+    
+    Lors de la première tentative de compilation, il est normal d'avoir les messages suivants :
+    ```
+    francis@ARRAKIS-DUNE:~/sonic_pad_os$ ./scripts/prepare.sh
+    rm: cannot remove 'lichee/arisc/ar100s/tools/toolchain.tar.bz2': No such file or directory
+    rm: cannot remove 'lichee/brandy-2.0/tools/toolchain/gcc-linaro-7.2.1-2017.11-x86_64_arm-linux-gnueabi.tar.xz': No such file or directory
+    rm: cannot remove 'lichee/brandy-2.0/tools/toolchain/riscv64-linux-x86_64-20200528.tar.xz': No such file or directory
+    rm: cannot remove 'lichee/arisc/coco/coco/tools/d10_toolchain.tar.bz2': No such file or directory
+    rm: cannot remove 'lichee/arisc/coco/coco/tools/openrisc_toolchain.tar.bz2': No such file or directory
+    rm: cannot remove 'package/cortana/cortana-sdk/libs/libskype_call.so': No such file or directory
+    ```
+    
  4. Etapes de la compilation ( 4 étapes) :
      ```
      source build/envsetup.sh
