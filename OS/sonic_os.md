@@ -73,6 +73,18 @@ francis@ARRAKIS-DUNE:~$
 
 1. Télécharger le dépôt : 
     `git clone https://github.com/CrealityTech/sonic_pad_os.git`
+    ```
+    francis@ARRAKIS-DUNE:~$ git clone https://github.com/CrealityTech/sonic_pad_os.git
+    Cloning into 'sonic_pad_os'...
+    remote: Enumerating objects: 123814, done.
+    remote: Counting objects: 100% (70/70), done.
+    remote: Compressing objects: 100% (38/38), done.
+    remote: Total 123814 (delta 31), reused 49 (delta 25), pack-reused 123744
+    Receiving objects: 100% (123814/123814), 1.62 GiB | 11.70 MiB/s, done.
+    Resolving deltas: 100% (25556/25556), done.
+    Checking out files: 100% (129562/129562), done.
+    francis@ARRAKIS-DUNE:~$
+    ```
 2. Téléchargez les paquets complémentaires de sources, les sauvegarder dans un réperoire «dl» (sonic_pad_os/dl) :
     ```
     cd sonic_pad_os
