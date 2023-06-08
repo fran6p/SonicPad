@@ -17,7 +17,15 @@ Installer les dépendances nécessaires :
 sudo apt update && sudo apt upgrade
 sudo apt install git gcc gawk flex libc6:i386 libstdc++6:i386 lib32z1 libncurses5 libncurses5-dev python g++ libz-dev libssl-dev make p7zip-full
 ```
-*Sous WSL2, avec les versions de Ubuntu (18.04.06, 20.04, 22.04), les paquets `libc6:i386`et `libstdc++6:i386` ne sont pas trouvés* :
+
+Il est possible que la première tentative de compilation (voir plus loin) échoue à cause d'une bibliothèque «openssl» absente, donc en prévention :
+```
+sudo apt install libssl-dev
+```
+
+*Uniquement avec WSL2, avec les versions de Ubuntu (18.04.06, 20.04, 22.04), les paquets `libc6:i386`et `libstdc++6:i386` ne sont pas trouvés* :
+<details>
+  <summary>(Cliquez pour agrandir!)</summary>
     
     ```
     francis@ARRAKIS-DUNE:~$ sudo apt install libc6:i386 libstdc++6:i386
@@ -68,8 +76,9 @@ libc6:i386:
         500 http://archive.ubuntu.com/ubuntu bionic/main i386 Packages
 francis@ARRAKIS-DUNE:~$
 ```
+</details>
 
-Sous VirtualBox (7), les paquets prévus pour une architecture i386 peuvent être directement installés :smirk:
+Avec une VM Ubuntu 18.04.06 VirtualBox (7), les paquets prévus pour une architecture i386 peuvent être directement installés :smirk:
 
 ## Compiler
 
