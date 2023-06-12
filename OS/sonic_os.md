@@ -549,14 +549,14 @@ Le contenu du répertoire sonic_pad_os/dl :
     ```
     
  4. Etapes de la compilation ( 4 étapes) :
-     ```
+ ```
      source build/envsetup.sh
      lunch 6   ; ou lunch puis choix de l'option 6 dans la liste d'options proposées,  
      make -j2 && pack
      swupdate_pack_swu -ab
-     ```
+ ```
      
-     ```
+ ```
      francis@ARRAKIS-DUNE:~/sonic_pad_os$ source build/envsetup.sh
      Setup env done! Please run lunch next.
      francis@ARRAKIS-DUNE:~/sonic_pad_os$ lunch 6
@@ -574,7 +574,7 @@ Le contenu du répertoire sonic_pad_os/dl :
      TARGET_CHIP=sun50iw10p1
      ============================================
      francis@ARRAKIS-DUNE:~/sonic_pad_os$
-     ```
+ ```
      
 5. Une fois la compilation terminée (sans échec évidemment :smirk:) :
 
@@ -582,12 +582,12 @@ NOTES: j'ai eu bien du mal à réussir une compilation (parfois certains liens v
  
 Ce qui a réussi: après l'étape lunch 6
  
-     ```
+```
      make clean
      make
      pack
      …
-     ```
+```
  
     - Flashage via une clé USB :
     
