@@ -577,6 +577,17 @@ Le contenu du répertoire sonic_pad_os/dl :
      ```
      
 5. Une fois la compilation terminée (sans échec évidemment :smirk:) :
+
+NOTES: j'ai eu bien du mal à réussir une compilation (parfois certains liens vers des dépôts étaient introuvables). Le «make -j2», chez moi, en tout cas n'a jamais mené à une compilation réussie.
+ 
+ Ce qui a réussi: après l'étape lunch 6
+     ```
+     make clean
+     make
+     pack
+     …
+     ```
+ 
     - Flashage via une clé USB :
     
     Copiez les fichiers **config.ini** et **t800-sonic_lcd-ab_1.0.6.48.57.swu** du répertoire ***sonic_pad_os/out/r818-sonic_lcd/*** dans le répertoire racine de la clé USB.
