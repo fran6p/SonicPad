@@ -578,7 +578,8 @@ Le contenu du répertoire sonic_pad_os/dl :
      
 5. Une fois la compilation terminée (sans échec évidemment :smirk:) :
 
-NOTES: j'ai eu bien du mal à réussir une compilation (parfois certains liens vers des dépôts étaient introuvables). Le «make -j2», chez moi, en tout cas n'a jamais mené à une compilation réussie.
+NOTES: j'ai eu bien du mal à réussir une compilation (parfois certains liens vers des dépôts étaient introuvables).
+Le `make -j2`, chez moi, en tout cas n'a jamais mené à une compilation réussie (YMMV :smirk:).
  
 Ce qui a réussi: après l'étape lunch 6
  
