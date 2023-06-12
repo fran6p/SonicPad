@@ -23,7 +23,7 @@ Il est possible que la première tentative de compilation (voir plus loin) écho
 sudo apt install libssl-dev
 ```
 
-*Uniquement avec WSL2, avec les versions de Ubuntu (18.04.06, 20.04, 22.04), les paquets `libc6:i386`et `libstdc++6:i386` ne sont pas trouvés* :
+*Uniquement avec WSL2, pour les versions de Ubuntu (18.04.06, 20.04, 22.04), les paquets `libc6:i386`et `libstdc++6:i386` ne sont pas trouvés* :
 <details>
   <summary>(Cliquez pour agrandir!)</summary>
     
