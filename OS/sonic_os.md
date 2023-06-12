@@ -27,7 +27,7 @@ sudo apt install libssl-dev
 <details>
   <summary>(Cliquez pour agrandir!)</summary>
     
-    ```
+```
     francis@ARRAKIS-DUNE:~$ sudo apt install libc6:i386 libstdc++6:i386
     Reading package lists... Done
     Building dependency tree
@@ -41,7 +41,7 @@ sudo apt install libssl-dev
     E: Package 'libc6:i386' has no installation candidate
     E: Unable to locate package libstdc++6:i386
     E: Couldn't find any package by regex 'libstdc++6'
-    ```
+```
 
 Pour résoudre ce problème d'installation de ces paquets pour une architecture «i386», :
 ```
@@ -84,7 +84,7 @@ Avec une VM Ubuntu 18.04.06 VirtualBox (7), les paquets prévus pour une archite
 
 1. Télécharger le dépôt : 
     `git clone https://github.com/CrealityTech/sonic_pad_os.git`
-    ```
+```
     francis@ARRAKIS-DUNE:~$ git clone https://github.com/CrealityTech/sonic_pad_os.git
     Cloning into 'sonic_pad_os'...
     remote: Enumerating objects: 123814, done.
@@ -95,15 +95,15 @@ Avec une VM Ubuntu 18.04.06 VirtualBox (7), les paquets prévus pour une archite
     Resolving deltas: 100% (25556/25556), done.
     Checking out files: 100% (129562/129562), done.
     francis@ARRAKIS-DUNE:~$
-    ```
+```
 2. Téléchargez les paquets complémentaires de sources, les sauvegarder dans un réperoire «dl» (sonic_pad_os/dl) :
-    ```
+```
     cd sonic_pad_os
     mkdir dl
     cd dl
     wget https://raw.githubusercontent.com/fran6p/SonicPad/main/Fichiers/sonic_pad_os_dl.txt
     wget -i sonic_pad_os_dl.txt
-    ```
+```
     
 <details>
   <summary>(Cliquez pour agrandir!)</summary>
@@ -532,13 +532,13 @@ Le contenu du répertoire sonic_pad_os/dl :
 ![listing](https://github.com/fran6p/SonicPad/blob/main/Images/sonic_os_dl-listing.jpg)
     
 3. Entrer dans le répertoire racine de sonic_pad_os et exécuter le script «prepare.sh» du répertoire «script/»  :
-    ```
+```
     cd ~/sonic_pad_os
     ./scripts/prepare.sh
-    ```
+```
     
     Lors de la première tentative de compilation, il est normal d'avoir les messages suivants :
-    ```
+```
     francis@ARRAKIS-DUNE:~/sonic_pad_os$ ./scripts/prepare.sh
     rm: cannot remove 'lichee/arisc/ar100s/tools/toolchain.tar.bz2': No such file or directory
     rm: cannot remove 'lichee/brandy-2.0/tools/toolchain/gcc-linaro-7.2.1-2017.11-x86_64_arm-linux-gnueabi.tar.xz': No such file or directory
@@ -546,7 +546,7 @@ Le contenu du répertoire sonic_pad_os/dl :
     rm: cannot remove 'lichee/arisc/coco/coco/tools/d10_toolchain.tar.bz2': No such file or directory
     rm: cannot remove 'lichee/arisc/coco/coco/tools/openrisc_toolchain.tar.bz2': No such file or directory
     rm: cannot remove 'package/cortana/cortana-sdk/libs/libskype_call.so': No such file or directory
-    ```
+```
     
  4. Etapes de la compilation ( 4 étapes) :
  ```
@@ -589,17 +589,17 @@ Ce qui a réussi: après l'étape lunch 6
      …
 ```
  
-    - Flashage via une clé USB :
-    
-    Copiez les fichiers **config.ini** et **t800-sonic_lcd-ab_1.0.6.48.57.swu** du répertoire ***sonic_pad_os/out/r818-sonic_lcd/*** dans le répertoire racine de la clé USB.
-    
-    **Le numéro de version du micrologiciel doit être supérieur au numéro de version actuel de l'appareil**, sinon la fenêtre de mise à niveau ne s'affichera pas.
-    
-    - Flashage via mise à jour à partir d'un ordinateur relié en USB au SonicPad et le programme Phoenix Suite :
-    
-    Le chemin de l'image générée après la compilation est **sonic_pad_os/out/r818-sonic_lcd/t800-sonic_lcd_uart0.img**.
-    
-    Se référer au lien pour l'outil de flashage et la méthode de mise à jour indiquée **[ici](https://github.com/CrealityOfficial/Creality_Sonic_Pad_Firmware)**
+- Flashage via une clé USB :
+
+Copiez les fichiers **config.ini** et **t800-sonic_lcd-ab_1.0.6.48.57.swu** du répertoire ***sonic_pad_os/out/r818-sonic_lcd/*** dans le répertoire racine de la clé USB.
+
+**Le numéro de version du micrologiciel doit être supérieur au numéro de version actuel de l'appareil**, sinon la fenêtre de mise à niveau ne s'affichera pas.
+
+- Flashage via mise à jour à partir d'un ordinateur relié en USB au SonicPad et le programme Phoenix Suite :
+
+Le chemin de l'image générée après la compilation est **sonic_pad_os/out/r818-sonic_lcd/t800-sonic_lcd_uart0.img**.
+
+Se référer au lien pour l'outil de flashage et la méthode de mise à jour indiquée **[ici](https://github.com/CrealityOfficial/Creality_Sonic_Pad_Firmware)**
 
 ## NOTES
 
