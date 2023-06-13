@@ -592,7 +592,7 @@ Ce qui a réussi: après l'étape lunch 6
  
 - Flashage via une clé USB :
 
-Copiez les fichiers **config.ini** et **t800-sonic_lcd-ab_1.0.6.48.57.swu** du répertoire ***sonic_pad_os/out/r818-sonic_lcd/*** dans le répertoire racine de la clé USB.
+Copiez les fichiers **config.ini** et **t800-sonic_lcd-ab_1.0.6.48.57.swu** du répertoire ***sonic_pad_os/out/r818-sonic_lcd/swupdate/*** dans le répertoire racine de la clé USB.
 
 **Le numéro de version du micrologiciel doit être supérieur au numéro de version actuel de l'appareil**, sinon la fenêtre de mise à niveau ne s'affichera pas.
 
